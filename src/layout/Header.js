@@ -42,7 +42,7 @@ const Header = () => {
                         </select>
                     </div>
                     <input type="search" name="" id="" />
-                    <Button sx={{borderRadius: '45px', background: '#ff1e00', padding: '5px 20px'}} variant="contained" >Search</Button>
+                    <Button sx={{borderRadius: '45px', background: '#ff1e00', padding: '5px 20px', '&:hover':{backgroundColor: '#011B39'}}} variant="contained" >Search</Button>
                 </div>
                 <div className='basis-1/4 flex justify-evenly text-base-100'>
                     <div className=''>
