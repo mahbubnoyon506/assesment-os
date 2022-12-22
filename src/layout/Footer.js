@@ -1,14 +1,23 @@
+import { Button } from '@mui/material';
 import React from 'react';
 
 const Footer = () => {
     return (
         <div>
             <footer class="text-center lg:text-left bg-gray-100 text-gray-600">
-                <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
-                    <div class="mr-12 hidden lg:block">
-                        <span>Get connected with us on social networks:</span>
+                <div class="mx-auto p-6 border-t-2 border-secondary">
+                    <div class=" flex justify-center items-center mb-5">
+                        <div >
+                            <p className='text-4xl font-semibold'>Sign Up for the NEWSLETTER</p>
+                            <div className='flex justify-center items-center mt-5'>
+                                <input className='border rounded-full py-1 pl-2' type="email" name="" id="" placeholder='Your Email'/>
+                                <Button sx={{ borderRadius: '45px', background: '#ff1e00', padding: '5px 10px', marginLeft: '-50px' }} variant='contained'> Subscribe</Button>
+                            </div>
+                        </div>
                     </div>
                     <div class="flex justify-center">
+                        {/* <span className='text-center block'>Get connected with us on social networks:</span> */}
+                        <div className='flex'>
                         <a href="#!" class="mr-6 text-gray-600">
                             <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
                                 class="w-2.5" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -59,9 +68,10 @@ const Footer = () => {
                                 </path>
                             </svg>
                         </a>
+                        </div>
                     </div>
                 </div>
-                <div class="mx-6 py-10 text-center md:text-left">
+                <div class="px-6 py-10 text-base-100 text-center md:text-left bg-[#15161D] border-t-2 border-primary">
                     <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <div class="">
                             <h6 class="
@@ -167,7 +177,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div class="text-center p-6 bg-gray-200">
+                <div class="text-center p-6 bg-[#1E1F29] text-base-100">
                     <span>© 2021 Copyright:</span>
                     <a class="text-gray-600 font-semibold" href="https://tailwind-elements.com/">Tailwind Elements</a>
                 </div>

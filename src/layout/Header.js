@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa'
+import { FaEnvelope, FaPhoneAlt, FaRegHeart } from 'react-icons/fa'
 import { MdLocationOn } from 'react-icons/md'
 import { IoLogoUsd } from 'react-icons/io'
 import { BsPersonCircle } from 'react-icons/bs'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { Button } from '@mui/material';
 
 
 
@@ -16,26 +18,52 @@ const Header = () => {
             <div className='text-base-100 bg-[#1E1F29] py-2 px-10 flex justify-between'>
                 <div className=' '>
                     <ul className='flex'>
-                        <li className='font-semibold hover:text-primary mr-2'><a className='flex items-center' href=""><FaPhoneAlt color='#ff1e00'/> +021-95-51-84</a></li>
-                        <li className='font-semibold hover:text-primary mr-2'><a className='flex items-center' href=""><FaEnvelope color='#ff1e00'/> email@email.com</a></li>
-                        <li className='font-semibold hover:text-primary mr-2'><a className='flex items-center' href=""><MdLocationOn color='#ff1e00'/> 1734 Stonecoal Road</a></li>
+                        <li className='font-semibold hover:text-primary mr-2'><a className='flex items-center' href=""><FaPhoneAlt color='#ff1e00' /> +021-95-51-84</a></li>
+                        <li className='font-semibold hover:text-primary mr-2'><a className='flex items-center' href=""><FaEnvelope color='#ff1e00' /> email@email.com</a></li>
+                        <li className='font-semibold hover:text-primary mr-2'><a className='flex items-center' href=""><MdLocationOn color='#ff1e00' /> 1734 Stonecoal Road</a></li>
                     </ul>
                 </div>
                 <div className='flex'>
-                   <p className='font-semibold hover:text-primary mr-2 flex items-center'><IoLogoUsd color='#ff1e00'/>USD</p>
-                   <p className='font-semibold hover:text-primary mr-2 flex items-center'><BsPersonCircle color='#ff1e00'/>My Account</p>
+                    <p className='font-semibold hover:text-primary mr-2 flex items-center'><IoLogoUsd color='#ff1e00' />USD</p>
+                    <p className='font-semibold hover:text-primary mr-2 flex items-center'><BsPersonCircle color='#ff1e00' />My Account</p>
                 </div>
             </div>
-            <div>
-                <div>
-                    <p>Electro</p>
+            <div className='bg-[#15161D] py-3 px-10 md:flex flex-row justify-between items-center border-b-2 border-primary'>
+                <div className='basis-1/4'>
+                    <p className='text-6xl font-bold text-base-100'>Electro</p>
                 </div>
-                <div>
-                    <div><select name="" id=""></select></div>
+                <div className='basis-2/4 flex justify-between bg-base-100 rounded-full py-1 px-3'>
+                    <div className=''>
+                        <select className='' name="" id="">
+                            <option value="All Category" selected>All Category</option>
+                            <option value="Category 1">Category 1</option>
+                            <option value="Category 2">Category 2</option>
+                            <option value="Category 3">Category 3</option>
+                        </select>
+                    </div>
+                    <input type="search" name="" id="" />
+                    <Button sx={{borderRadius: '45px', background: '#ff1e00', padding: '5px 20px'}} variant="contained" >Search</Button>
                 </div>
-                <div>
-
+                <div className='basis-1/4 flex justify-evenly text-base-100'>
+                    <div className=''>
+                        <FaRegHeart className='mx-auto' size={30} color='#ff1e00'/>
+                        <p>Your Wishlist</p>
+                    </div>
+                    <div className=''>
+                        <AiOutlineShoppingCart className='mx-auto' size={30} color='#ff1e00'/>
+                        <p>Your Cart</p>
+                    </div>
                 </div>
+            </div>
+            <div className='bg-base-100 py-4 border-b-2 border-secondary'>
+                <ul className='flex justify-center'>
+                    <li className='mx-5 text-lg font-semibold'>Home</li>
+                    <li className='mx-5 text-lg font-semibold'>Hot Deals</li>
+                    <li className='mx-5 text-lg font-semibold'>Laptop</li>
+                    <li className='mx-5 text-lg font-semibold'>Cameras</li>
+                    <li className='mx-5 text-lg font-semibold'>Smartphones</li>
+                    <li className='mx-5 text-lg font-semibold'>Accessories</li>
+                </ul>
             </div>
         </div >
     );
