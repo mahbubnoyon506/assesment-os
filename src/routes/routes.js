@@ -1,3 +1,4 @@
+import Cart from "../components/Products/Cart";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home";
 
@@ -13,6 +14,10 @@ const routes = createBrowserRouter([
             path: '/',
             element: <Home/>
         },
+        {
+            path: '/cart',
+            element: <Cart/>
+        }
     ]
    }
 ])

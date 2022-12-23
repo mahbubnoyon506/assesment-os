@@ -64,28 +64,27 @@ const Header = () => {
                         {
                             openWishList &&
                             <OpenWishlist
-                                className="top-0 right-0"
+                                className=""
                                 openWishList={openWishList}
                                 setOpenWishList={setOpenWishList}
                             ></OpenWishlist>
                         }
                     </div>
                     <div>
-
+                        <button className='cursor-pointer'
+                            onClick={handleClick}
+                        >
+                            <AiOutlineShoppingCart className='mx-auto' size={30} color='#ff1e00' />
+                            <p>Your Cart</p>
+                        </button>
+                        {openCart &&
+                            <OpenCart
+                                className=""
+                                openCart={openCart}
+                                setOpenCart={setOpenCart}
+                            ></OpenCart>
+                        }
                     </div>
-                    <button className='cursor-pointer'
-                        onClick={handleClick}
-                    >
-                        <AiOutlineShoppingCart className='mx-auto' size={30} color='#ff1e00' />
-                        <p>Your Cart</p>
-                    </button>
-                    {openCart &&
-                        <OpenCart
-                            className="top-0 right-0"
-                            openCart={openCart}
-                            setOpenCart={setOpenCart}
-                        ></OpenCart>
-                    }
                 </div>
             </div>
             <div className='bg-base-100 py-4 border-b-2 border-secondary'>

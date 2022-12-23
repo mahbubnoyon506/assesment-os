@@ -113,9 +113,9 @@ const Product = () => {
                     </form>
                 </div>
             </div>
-            {/* {
+            {
                 openCart && <OpenCart openCart={openCart} setOpenCart={setOpenCart}></OpenCart>
-            } */}
+            }
         </div>
     );
 };
