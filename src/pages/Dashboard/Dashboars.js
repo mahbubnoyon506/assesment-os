@@ -38,13 +38,13 @@ function Dashboard(props) {
                     <NavLink to='/dashboard'>Dashboard</NavLink>
                 </ListItem>
                 <ListItem>
-                    <NavLink to='/dashboard/orders'>Order</NavLink>
+                    <NavLink to='/dashboard/orders'>Orders</NavLink>
                 </ListItem>
                 <ListItem>
-                    <NavLink to='/dashboard/customers'>Order</NavLink>
+                    <NavLink to='/dashboard/customers'>Customers</NavLink>
                 </ListItem>
                 <ListItem>
-                    <NavLink to='/dashboard/products'>Order</NavLink>
+                    <NavLink to='/dashboard/products'>Products</NavLink>
                 </ListItem>
             </List>
             <Divider />
@@ -73,6 +73,7 @@ function Dashboard(props) {
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
+                    background: '#59ce8f'
                 }}
             >
                 <Toolbar>
