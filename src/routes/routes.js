@@ -1,4 +1,5 @@
 import Cart from "../components/Products/Cart";
+import Checkout from "../components/Products/Checkout";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home";
 
@@ -17,6 +18,10 @@ const routes = createBrowserRouter([
         {
             path: '/cart',
             element: <Cart/>
+        },
+        {
+            path: '/checkout',
+            element: <Checkout/>
         }
     ]
    }

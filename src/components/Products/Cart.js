@@ -110,7 +110,7 @@ const Cart = () => {
                                 <ListItemText>Total:</ListItemText>
                             </ListItem>
                         </List>
-                        <div className='flex justify-center mt-5'>
+                        <div className='w-full mt-5'>
                             <Link to='/checkout' className='text-white'><Button sx={{width: '100%', borderRadius: '0px', background: '#ff1e00', padding: '5px 20px', '&:hover': { backgroundColor: '#011B39' } }} variant="contained" >Checkout</Button></Link>
                         </div>
                     </div>
