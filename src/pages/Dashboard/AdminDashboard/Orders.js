@@ -17,52 +17,49 @@ const columns = [
         label: 'Product',
         minWidth: 170,
         align: 'right',
-        format: (value) => value.toLocaleString('en-US'),
     },
     {
         id: 'size',
         label: 'Quantity',
         minWidth: 170,
         align: 'right',
-        format: (value) => value.toLocaleString('en-US'),
     },
     {
-        id: 'density',
-        label: 'Bill',
+        id: 'total',
+        label: 'Total',
         minWidth: 170,
         align: 'right',
-        format: (value) => value.toFixed(2),
     },
     {
         id: 'status',
         label: 'Status',
         minWidth: 170,
         align: 'right',
-        format: (value) => value.toFixed(2),
     },
 ];
 
-function createData(name, code, population, size, status) {
-    const density = population / size;
-    return { name, code, population, size, density, status };
+function createData(name, code, population, size, total, status) {
+
+    return { name, code, population, size, total, status };
 }
 
 const rows = [
-    createData('India', 'IN', 1324171354, 3287263, 'Pending'),
-    createData('China', 'CN', 1403500365, 9596961, 'Delivered'),
-    createData('Italy', 'IT', 60483973, 301340, 'Delivered'),
-    createData('United States', 'US', 327167434, 9833520, 'Delivered'),
-    createData('Canada', 'CA', 37602103, 9984670, 'Delivered'),
-    createData('Australia', 'AU', 25475400, 7692024, 'Pending'),
-    createData('Germany', 'DE', 83019200, 357578, 'Pending'),
-    createData('Ireland', 'IE', 4857000, 70273, 'Pending'),
-    createData('Mexico', 'MX', 126577691, 1972550, 'Pending'),
-    createData('Japan', 'JP', 126317000, 377973, 'Pending'),
-    createData('France', 'FR', 67022000, 640679, 'Pending'),
-    createData('United Kingdom', 'GB', 67545757, 242495, 'Pending'),
-    createData('Russia', 'RU', 146793744, 17098246, 'Pending'),
-    createData('Nigeria', 'NG', 200962417, 923768, 'Pending'),
-    createData('Brazil', 'BR', 210147125, 8515767, 'Pending'),
+    createData('John', 'john@gmail.com', 'camera', 2, 2210, 'Pending'),
+    createData('Paul', 'paul@gmail.com', 'phone', 1,  9596961, 'Delivered'),
+    createData('Dwine', 'dwine@gmail.com', 'laptop', 3,  301340, 'Delivered'),
+    createData('John', 'john@gmail.com', 'camera', 2, 2210, 'Pending'),
+    createData('Paul', 'paul@gmail.com', 'phone', 1,  9596961, 'Delivered'),
+    createData('Dwine', 'dwine@gmail.com', 'laptop', 3,  301340, 'Delivered'),
+    createData('John', 'john@gmail.com', 'camera', 2, 2210, 'Pending'),
+    createData('Paul', 'paul@gmail.com', 'phone', 1,  9596961, 'Delivered'),
+    createData('Dwine', 'dwine@gmail.com', 'laptop', 3,  301340, 'Delivered'),
+    createData('John', 'john@gmail.com', 'camera', 2, 2210, 'Pending'),
+    createData('Paul', 'paul@gmail.com', 'phone', 1,  9596961, 'Delivered'),
+    createData('Dwine', 'dwine@gmail.com', 'laptop', 3,  301340, 'Delivered'),
+    createData('John', 'john@gmail.com', 'camera', 2, 2210, 'Pending'),
+    createData('Paul', 'paul@gmail.com', 'phone', 1,  9596961, 'Delivered'),
+    createData('Dwine', 'dwine@gmail.com', 'laptop', 3,  301340, 'Delivered'),
+
 ];
 
 export default function Orders() {
