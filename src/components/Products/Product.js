@@ -6,11 +6,12 @@ import Rating from '@mui/material/Rating';
 import CircleIcon from '@mui/icons-material/Circle';
 import ProductCarousel from './ProductCarousel';
 import OpenCart from '../Components/ShoppingCart/OpenCart';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../firebase.init';
+// import { useAuthState } from 'react-firebase-hooks/auth';
+// import auth from '../firebase.init';
 
 const Product = () => {
-    const [user] = useAuthState(auth);
+    // const [user] = useAuthState(auth);
+    const user = ''
     const navigate = useNavigate()
     const { id } = useParams();
     const [product, setProduct] = useState('');
@@ -112,9 +113,9 @@ const Product = () => {
                     </form>
                 </div>
             </div>
-            {
+            {/* {
                 openCart && <OpenCart openCart={openCart} setOpenCart={setOpenCart}></OpenCart>
-            }
+            } */}
         </div>
     );
 };

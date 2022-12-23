@@ -3,17 +3,17 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-export default function OpenCart({openCart, setOpenCart}) {
-  const open = Boolean(openCart);
+export default function BasicMenu({openWishList, setOpenWishList}) {
+  const open = Boolean(openWishList);
   const handleClose = () => {
-    setOpenCart('');
+    setOpenWishList(null);
   };
 
   return (
     <div>
       <Menu
         id="basic-menu"
-        anchorEl={openCart}
+        anchorEl={openWishList}
         open={open}
         onClose={handleClose}
         MenuListProps={{

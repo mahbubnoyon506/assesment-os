@@ -5,13 +5,22 @@ import { IoLogoUsd } from 'react-icons/io'
 import { BsPersonCircle } from 'react-icons/bs'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { Button } from '@mui/material';
-
+import OpenCart from '../components/Products/OpenCart'
+import OpenWishlist from '../components/Products/OpenWishlist'
 
 
 
 const Header = () => {
+    const [openCart, setOpenCart] = useState(false);
+    const [openWishList, setOpenWishList] = React.useState(null);
 
+    const handleClick = (event) => {
+        setOpenCart(event.currentTarget);
+    };
 
+    const handleClickWish = (event) => {
+        setOpenWishList(event.currentTarget);
+    };
 
     return (
         <div className=''>
@@ -42,17 +51,41 @@ const Header = () => {
                         </select>
                     </div>
                     <input type="search" name="" id="" />
-                    <Button sx={{borderRadius: '45px', background: '#ff1e00', padding: '5px 20px', '&:hover':{backgroundColor: '#011B39'}}} variant="contained" >Search</Button>
+                    <Button sx={{ borderRadius: '45px', background: '#ff1e00', padding: '5px 20px', '&:hover': { backgroundColor: '#011B39' } }} variant="contained" >Search</Button>
                 </div>
                 <div className='basis-1/4 flex justify-evenly text-base-100'>
-                    <div className=''>
-                        <FaRegHeart className='mx-auto' size={30} color='#ff1e00'/>
-                        <p>Your Wishlist</p>
+                    <div>
+                        <button className='cursor-pointer'
+                            onClick={handleClickWish}
+                        >
+                            <FaRegHeart className='mx-auto' size={30} color='#ff1e00' />
+                            <p>Your Wishlist</p>
+                        </button>
+                        {
+                            openWishList &&
+                            <OpenWishlist
+                                className="top-0 right-0"
+                                openWishList={openWishList}
+                                setOpenWishList={setOpenWishList}
+                            ></OpenWishlist>
+                        }
                     </div>
-                    <div className=''>
-                        <AiOutlineShoppingCart className='mx-auto' size={30} color='#ff1e00'/>
+                    <div>
+
+                    </div>
+                    <button className='cursor-pointer'
+                        onClick={handleClick}
+                    >
+                        <AiOutlineShoppingCart className='mx-auto' size={30} color='#ff1e00' />
                         <p>Your Cart</p>
-                    </div>
+                    </button>
+                    {openCart &&
+                        <OpenCart
+                            className="top-0 right-0"
+                            openCart={openCart}
+                            setOpenCart={setOpenCart}
+                        ></OpenCart>
+                    }
                 </div>
             </div>
             <div className='bg-base-100 py-4 border-b-2 border-secondary'>
