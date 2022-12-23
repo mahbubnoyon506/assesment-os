@@ -10,6 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import { Box, Button, Typography } from '@mui/material';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { BsPersonPlus } from 'react-icons/bs';
+import CustomerAdd from './CustomerAdd';
 
 const columns = [
     { id: 'name', label: 'Customer Name', minWidth: 170 },
@@ -73,6 +74,12 @@ export default function Customers() {
         setPage(0);
     };
 
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+
     return (
         <div>
             <Box sx={{ margin: '10px 0px 20px' }}>
@@ -81,8 +88,11 @@ export default function Customers() {
                 </Paper>
             </Box>
             <div className='flex justify-end pb-5'>
-                <Button sx={{fontWeight: '600', borderRadius: '45px', background: '#ff1e00', padding: '10px 20px', '&:hover': { backgroundColor: '#011B39' } }} variant='contained'>Add Customer <BsPersonPlus className='ml-1' size={20}/></Button>
+                <Button onClick={handleClickOpen} sx={{fontWeight: '600', borderRadius: '45px', background: '#ff1e00', padding: '10px 20px', '&:hover': { backgroundColor: '#011B39' } }} variant='contained'>Add Customer <BsPersonPlus className='ml-1' size={20}/></Button>
             </div>
+            {
+                open && <CustomerAdd open={open} setOpen={setOpen}></CustomerAdd>
+            }
             <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                 <TableContainer sx={{ maxHeight: 440 }}>
                     <Table stickyHeader aria-label="sticky table">

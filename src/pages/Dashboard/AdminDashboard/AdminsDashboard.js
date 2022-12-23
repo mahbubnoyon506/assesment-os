@@ -61,7 +61,7 @@ const AdminsDashboard = () => {
                         p: 3,
                         display: 'flex',
                         flexDirection: 'column',
-                        background: '#1FC77E',
+                        background: "linear-gradient(to left, #64b3f6, #2b77e5)",
                         color: '#011B39',
                         height: 380
                     }}>

@@ -17,9 +17,18 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Link, NavLink, Outlet } from 'react-router-dom';
-import { Paper } from '@mui/material';
+import { Button, Paper } from '@mui/material';
+import { MdOutlineDashboard } from 'react-icons/md';
+import { FaFirstOrder, FaUsers } from 'react-icons/fa';
+import { BsMinecartLoaded } from 'react-icons/bs';
+import { FcLeft } from 'react-icons/fc';
 
 const drawerWidth = 240;
+const menuLinkStyles = ({ isActive }) => {
+    return {
+      color: isActive ? "#ff1e00" : "",
+    };
+  };
 
 function Dashboard(props) {
     const { window } = props;
@@ -28,38 +37,45 @@ function Dashboard(props) {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+    const handleClose = () => {
+        setMobileOpen(false);
+      };
 
     const drawer = (
         <div>
-            <Toolbar />
+            {/* <Toolbar /> */}
+            <p className='text-4xl font-bold text-neutral text-center py-5'>Electro</p>
             <Divider />
             <List>
                 <ListItem>
-                    <NavLink to='/dashboard'>Dashboard</NavLink>
+                    <NavLink 
+                    style={menuLinkStyles} 
+                    onClick={handleClose}
+                    className='flex font-semibold' to='/dashboard'> <MdOutlineDashboard className='mr-2' size={20} /> Dashboard</NavLink>
                 </ListItem>
                 <ListItem>
-                    <NavLink to='/dashboard/orders'>Orders</NavLink>
+                    <NavLink 
+                    style={menuLinkStyles} 
+                    onClick={handleClose}
+                    className='flex font-semibold' to='/dashboard/orders'> <FaFirstOrder className='mr-2' size={20} /> Orders</NavLink>
                 </ListItem>
                 <ListItem>
-                    <NavLink to='/dashboard/customers'>Customers</NavLink>
+                    <NavLink 
+                    style={menuLinkStyles} 
+                    onClick={handleClose}
+                    className='flex font-semibold' to='/dashboard/customers'> <FaUsers className='mr-2' size={20} /> Customers</NavLink>
                 </ListItem>
                 <ListItem>
-                    <NavLink to='/dashboard/products'>Products</NavLink>
+                    <NavLink 
+                    style={menuLinkStyles} 
+                    onClick={handleClose}
+                    className='flex font-semibold' to='/dashboard/products'> <BsMinecartLoaded className='mr-2' size={20} /> Products</NavLink>
                 </ListItem>
             </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
+            <div style={{height: '50vh'}}></div>
+            <div className='flex justify-center'>
+                <Link to='/'><Button sx={{ fontWeight: '600', borderRadius: '', background: '#ff1e00', padding: '10px 20px', '&:hover': { backgroundColor: '#011B39' } }} variant='contained'><FcLeft className='mr-2' size={20} />Back To Home</Button></Link>
+            </div>
         </div>
     );
 
