@@ -106,14 +106,6 @@ const Header = () => {
                             <FaRegHeart className='mx-auto' size={30} color='#ff1e00' />
                             <p>Your Wishlist</p>
                         </Link>
-                        {/* {
-                            openWishList &&
-                            <OpenWishlist
-                                className=""
-                                openWishList={openWishList}
-                                setOpenWishList={setOpenWishList}
-                            ></OpenWishlist>
-                        } */}
                     </div>
                     <div>
                         <button className='cursor-pointer'
@@ -132,15 +124,13 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className='bg-base-100 py-4 border-b-2 border-secondary'>
-                <ul className='md:flex justify-center'>
-                    <NavLink to='/' className='mx-5 text-lg font-semibold'>Home</NavLink>
-                    <NavLink to='#' className='mx-5 text-lg font-semibold'>Hot Deals</NavLink>
-                    <NavLink to='#' className='mx-5 text-lg font-semibold'>Laptop</NavLink>
-                    <NavLink to='#' className='mx-5 text-lg font-semibold'>Cameras</NavLink>
-                    <NavLink to='#' className='mx-5 text-lg font-semibold'>Smartphones</NavLink>
-                    <NavLink to='#' className='mx-5 text-lg font-semibold'>Accessories</NavLink>
-                </ul>
+            <div className='bg-base-100 py-4 border-b-2 border-secondary md:flex justify-center'>
+                <NavLink to='/' className='block md:inline-block mx-5 text-lg font-semibold'>Home</NavLink>
+                <NavLink to='#' className='block md:inline-block mx-5 text-lg font-semibold'>Hot Deals</NavLink>
+                <NavLink to='#' className='block md:inline-block mx-5 text-lg font-semibold'>Laptop</NavLink>
+                <NavLink to='#' className='block md:inline-block mx-5 text-lg font-semibold'>Cameras</NavLink>
+                <NavLink to='#' className='block md:inline-block mx-5 text-lg font-semibold'>Smartphones</NavLink>
+                <NavLink to='#' className='block md:inline-block mx-5 text-lg font-semibold'>Accessories</NavLink>
             </div>
         </div >
     );

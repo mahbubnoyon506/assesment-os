@@ -62,7 +62,6 @@ export default function OpenCart({ openCart, setOpenCart }) {
     )
 
   }
-
   console.log(cart)
   return (
     <div>
@@ -84,7 +83,6 @@ export default function OpenCart({ openCart, setOpenCart }) {
                     <TableRow>
                       <StyledTableCell>Product</StyledTableCell>
                       <StyledTableCell align="right">Name</StyledTableCell>
-                      <StyledTableCell align="right">Quantity</StyledTableCell>
                       <StyledTableCell align="right">Price</StyledTableCell>
                       <StyledTableCell align="right">Action</StyledTableCell>
                     </TableRow>
@@ -95,9 +93,8 @@ export default function OpenCart({ openCart, setOpenCart }) {
                         <StyledTableCell component="th" scope="row" sx={{ width: '70px' }}>
                           <img src={row.image} alt="" />
                         </StyledTableCell>
-                        <StyledTableCell align="right">{row.name}</StyledTableCell>
-                        <StyledTableCell align="right">{row.quantity}</StyledTableCell>
-                        <StyledTableCell align="right">{row.price * row.quantity} </StyledTableCell>
+                        <StyledTableCell align="right">{row.model}</StyledTableCell>
+                        <StyledTableCell align="right">{row.price} </StyledTableCell>
                         <StyledTableCell align="right" className='cursor-pointer' ><FaTrashAlt className='text-error' /></StyledTableCell>
                       </StyledTableRow>
                     ))}
@@ -105,7 +102,7 @@ export default function OpenCart({ openCart, setOpenCart }) {
                 </Table>
               </TableContainer>
               <div className='flex justify-center'>
-                <Link onClick={handleClose} to='/cart' className='btn btn-sm btn-primary rounded-full text-white my-5 w-48'>CheckOut</Link>
+                <Link onClick={handleClose} to='/cart' className='btn btn-sm btn-primary rounded-full text-white my-5 w-48'> <Button sx={{width: '100%', borderRadius: '0px', background: '#ff1e00', padding: '5px 20px', '&:hover': { backgroundColor: '#011B39' } }} variant="contained" >Checkout</Button></Link>
               </div>
             </div>
         }

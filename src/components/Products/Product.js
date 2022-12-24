@@ -8,6 +8,9 @@ import ProductCarousel from './ProductCarousel';
 import OpenCart from './OpenCart';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { useProducts } from '../../context/ProductProvider';
+import { Button } from '@mui/material';
+import { ADD_TO_CART } from '../../state/ProductState/actionTypes';
 
 const Product = () => {
     const [user] = useAuthState(auth);
@@ -16,71 +19,35 @@ const Product = () => {
     const { id } = useParams();
     const [product, setProduct] = useState('');
     const [value, setValue] = React.useState(5);
-    const [openCart, setOpenCart] = useState(false)
+    const [openCart, setOpenCart] = useState(false);
+    const { dispatch } = useProducts()
+    const { state: { products, loading, error } } = useProducts();
 
 
-
-
-    const handleAddCart = (e) => {
-        e.preventDefault();
-        if (!product) {
-            console.log('Product did not match')
-        } else {
-            const costPrice = product?.price * e.target.count.value;
-            let totalPrice = 0;
-            const cartItem = {
-                productId: product._id,
-                category: product?.category,
-                subcategory: product?.subcategory,
-                code: product?.code,
-                image: product?.image,
-                name: product?.name,
-                price: product?.price,
-                quantity: +(e.target.count.value),
-                costPrice
-            }
-            
-            const cartData = {
-                email: user?.email,
-                products: [
-                    {
-                        productId: product._id,
-                        category: product?.category,
-                        subcategory: product?.subcategory,
-                        code: product?.code,
-                        image: product?.image,
-                        name: product?.name,
-                        price: product?.price,
-                        quantity: +(e.target.count.value),
-                        costPrice
-                    }
-                ],
-                // totalPrice: products.forEach( (item) => console.log(item)),
-            }
-            const cartInfo = {
-                email : cartData.email,
-                products: cartData.products.push(cartItem)
-            }
-          console.log(cartItem)
-            axios.post('http://localhost:5000/api/cart', cartData)
-                .then(function (response) {
-                    console.log(response)
-                });
-        }
-    }
+    useEffect(() => {
+        setProduct(products.find((item) => item._id == id))
+    }, [products, id])
 
     const handleClickOpen = () => {
         setOpenCart(true);
     };
 
+    if (loading) {
+        return <p>Loading...</p>
+    } else if (error) {
+        return <p>Some error on item finds.</p>
+    }
+
     return (
         <div>
             <div className='lg:grid grid-cols-2 gap-10 lg:p-20 md:p-10 p-5'>
-                <div className=' w-full'><ProductCarousel product={product}/></div>
+                <div className='w-96'>
+                    <img src={product.image} alt="" />
+                </div>
                 <div className=''>
-                    <p>{product?.price} Taka</p>
-                    <h2>{product?.name}</h2>
-                    <div className='flex justify-between'>
+                    <h2 className='text-2xl text-neutral'>{product.model}</h2>
+                    <p className='text-lg font-semibold py-3'>{product.price} Taka</p>
+                    <div className=''>
                         <Box
                             sx={{
                                 '& > legend': { mt: 5 },
@@ -88,22 +55,19 @@ const Product = () => {
                         >
                             <Rating sx={{ fontSize: '20px' }} name="read-only" value={value} readOnly />
                         </Box>
-                        <button className='btn button'>Write Review</button>
                     </div>
                     <p> <span className='text-sm text-success'><CircleIcon style={{ fontSize: '15px' }} /></span> In Stack</p>
-                    <p>Material: {product.material}</p>
-                    <p>{product.description}</p>
-                    <form onSubmit={handleAddCart} action="">
-                        <div className='block w-32 my-5'>
-                            <input className='bg-slate-100 p-3' type="number" name="count" id="" placeholder='Quantity 1' min="1" />
-                            {
-                                user ? 
-                                <input onClick={handleClickOpen} className='btn bg-primary text-white rounded-none hover:bg-secondary my-5' type="submit" value="Add to Cart" />
+                    <div className='pt-5'>
+                        <p className='text-neutral pt-2'>{product?.keyFeature}</p>
+                    </div>
+                    <div className='w-48 my-5'>
+                        {
+                            user ?
+                                <Button onClick={() => { handleClickOpen(); dispatch({ type: ADD_TO_CART, payload: product }) }} sx={{ width: '100%', borderRadius: '0px', background: '#ff1e00', padding: '5px 20px', '&:hover': { backgroundColor: '#011B39' } }} variant="contained" >Add to Cart</Button>
                                 :
                                 navigate('/signin')
-                            }
-                        </div>
-                    </form>
+                        }
+                    </div>
                 </div>
             </div>
             {

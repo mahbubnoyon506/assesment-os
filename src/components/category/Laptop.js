@@ -42,7 +42,7 @@ const Laptops = () => {
                                 dispatch({type: ADD_TO_WISHLIST, payload: product})}><FaRegHeart className='mx-auto text-neutral hover:text-[#ff1e00]' size={20} /></Button>
                             </Tooltip>
                             <Tooltip title="Details View" placement="top">
-                                <Link to='/product'><Button><BiDetail className='mx-auto text-neutral hover:text-[#ff1e00]' size={20} /></Button></Link>
+                                <Link to={`/product/${product._id}`}><Button><BiDetail className='mx-auto text-neutral hover:text-[#ff1e00]' size={20} /></Button></Link>
                             </Tooltip>
                             <Tooltip title="Add to Cart" placement="top">
                                 <Button onClick={() => 
