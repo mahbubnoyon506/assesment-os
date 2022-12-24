@@ -4,24 +4,28 @@ import { MdLocationOn, MdOutlineDashboard } from 'react-icons/md'
 import { IoLogoUsd } from 'react-icons/io'
 import { BsPersonCircle } from 'react-icons/bs'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
-import { FiLogOut } from 'react-icons/fi'
+import { FiLogIn, FiLogOut } from 'react-icons/fi'
 import { Button, Menu, MenuItem } from '@mui/material';
 import OpenCart from '../components/Products/OpenCart'
 import OpenWishlist from '../components/Products/OpenWishlist'
-import { Link } from 'react-router-dom';
-
+import { Link, NavLink } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import {signOut } from 'firebase/auth';
+import auth from '../firebase.init';
 
 
 const Header = () => {
+    const [user] = useAuthState(auth)
+    console.log(user)
     const [openCart, setOpenCart] = useState(false);
     const [openWishList, setOpenWishList] = React.useState(null);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClickAccount = (event) => {
-      setAnchorEl(event.currentTarget);
+        setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
-      setAnchorEl(null);
+        setAnchorEl(null);
     };
 
     const handleClick = (event) => {
@@ -31,6 +35,9 @@ const Header = () => {
     const handleClickWish = (event) => {
         setOpenWishList(event.currentTarget);
     };
+    const logout = () => {
+        signOut(auth);
+      };
 
     return (
         <div className=''>
@@ -44,37 +51,40 @@ const Header = () => {
                 </div>
                 <div className='md:flex'>
                     <p className='font-semibold hover:text-primary mr-2 flex items-center'><IoLogoUsd color='#ff1e00' />USD</p>
-                    <div>
-                        <button
-                            id="basic-button"
-                            aria-controls={open ? 'basic-menu' : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? 'true' : undefined}
-                            onClick={handleClickAccount}
-                            className='text-base-100 font-semibold hover:text-primary mr-2 flex items-center'
-                        >
-                            <BsPersonCircle className='mr-1' color='#ff1e00' />
-                            My Account
-                        </button>
-                        <Menu
-                            id="basic-menu"
-                            anchorEl={anchorEl}
-                            open={open}
-                            onClose={handleClose}
-                            MenuListProps={{
-                                'aria-labelledby': 'basic-button',
-                            }}
-                        >
-                            <Link to='/dashboard'><MenuItem onClick={handleClose}> <MdOutlineDashboard className='mr-2' size={20}/> Dashboard</MenuItem></Link>
-                            <Link to=''><MenuItem onClick={handleClose}> <BsPersonCircle className='mr-2' size={20}/> Profile</MenuItem></Link>
-                            <Link to=''><MenuItem onClick={handleClose}> <FiLogOut className='mr-2' size={20}/> Logout</MenuItem></Link>
-                        </Menu>
-                    </div>
+                    {
+                        !user ? <Link className='font-semibold hover:text-primary mr-2 flex items-center' to='/signin'> <FiLogIn className='mr-1' color='#ff1e00' />Sign In</Link> :
+                            <div>
+                                <button
+                                    id="basic-button"
+                                    aria-controls={open ? 'basic-menu' : undefined}
+                                    aria-haspopup="true"
+                                    aria-expanded={open ? 'true' : undefined}
+                                    onClick={handleClickAccount}
+                                    className='text-base-100 font-semibold hover:text-primary mr-2 flex items-center'
+                                >
+                                    <BsPersonCircle className='mr-1' color='#ff1e00' />
+                                    My Account
+                                </button>
+                                <Menu
+                                    id="basic-menu"
+                                    anchorEl={anchorEl}
+                                    open={open}
+                                    onClose={handleClose}
+                                    MenuListProps={{
+                                        'aria-labelledby': 'basic-button',
+                                    }}
+                                >
+                                    <Link to='/dashboard'><MenuItem onClick={handleClose}> <MdOutlineDashboard className='mr-2' size={20} /> Dashboard</MenuItem></Link>
+                                    <Link to=''><MenuItem onClick={handleClose}> <BsPersonCircle className='mr-2' size={20} /> Profile</MenuItem></Link>
+                                    <MenuItem onClick={() => {handleClose(); logout();}}> <FiLogOut className='mr-2' size={20} /> Logout</MenuItem>
+                                </Menu>
+                            </div>
+                    }
                 </div>
             </div>
             <div className='bg-[#15161D] py-3 px-10 lg:flex flex-row justify-between items-center border-b-2 border-primary'>
                 <div className='basis-1/4 flex justify-center lg:justify-start pb-5 lg:pb-0'>
-                    <p className='text-6xl font-bold text-base-100'>Electro</p>
+                    <Link to='/' className='text-6xl font-bold text-base-100'>Electro</Link>
                 </div>
                 <div className='basis-2/4 lg:flex justify-between bg-base-100 rounded-full py-1 px-3 hidden'>
                     <div className=''>
@@ -124,12 +134,12 @@ const Header = () => {
             </div>
             <div className='bg-base-100 py-4 border-b-2 border-secondary'>
                 <ul className='md:flex justify-center'>
-                    <li className='mx-5 text-lg font-semibold'>Home</li>
-                    <li className='mx-5 text-lg font-semibold'>Hot Deals</li>
-                    <li className='mx-5 text-lg font-semibold'>Laptop</li>
-                    <li className='mx-5 text-lg font-semibold'>Cameras</li>
-                    <li className='mx-5 text-lg font-semibold'>Smartphones</li>
-                    <li className='mx-5 text-lg font-semibold'>Accessories</li>
+                    <NavLink to='/' className='mx-5 text-lg font-semibold'>Home</NavLink>
+                    <NavLink to='#' className='mx-5 text-lg font-semibold'>Hot Deals</NavLink>
+                    <NavLink to='#' className='mx-5 text-lg font-semibold'>Laptop</NavLink>
+                    <NavLink to='#' className='mx-5 text-lg font-semibold'>Cameras</NavLink>
+                    <NavLink to='#' className='mx-5 text-lg font-semibold'>Smartphones</NavLink>
+                    <NavLink to='#' className='mx-5 text-lg font-semibold'>Accessories</NavLink>
                 </ul>
             </div>
         </div >

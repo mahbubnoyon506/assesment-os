@@ -1,3 +1,5 @@
+import Signin from "../auth/Signin";
+import SignUp from "../auth/SignUp";
 import Cart from "../components/Products/Cart";
 import Checkout from "../components/Products/Checkout";
 import Main from "../layout/Main";
@@ -21,6 +23,14 @@ const routes = createBrowserRouter([
         {
             path: '/',
             element: <Home/>
+        },
+        {
+            path: '/signin',
+            element: <Signin/>
+        },
+        {
+            path: '/signup',
+            element: <SignUp/>
         },
         {
             path: '/cart',
