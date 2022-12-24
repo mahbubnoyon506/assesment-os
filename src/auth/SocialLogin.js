@@ -1,10 +1,5 @@
-import React, { useEffect } from 'react';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import auth from '../firebase.init';
-import useToken from '../hooks/useToken';
-// import Loader from '../Loader';
+import React from 'react';
+
 
 const SocialLogin = () => {
 

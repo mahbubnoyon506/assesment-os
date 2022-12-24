@@ -2,6 +2,8 @@ import Signin from "../auth/Signin";
 import SignUp from "../auth/SignUp";
 import Cart from "../components/Products/Cart";
 import Checkout from "../components/Products/Checkout";
+import Product from "../components/Products/Product";
+import Wishlist from "../components/Products/Wishlist";
 import Main from "../layout/Main";
 import AdminsDashboard from "../pages/Dashboard/AdminDashboard/AdminsDashboard";
 import Customers from "../pages/Dashboard/AdminDashboard/Customers";
@@ -33,8 +35,16 @@ const routes = createBrowserRouter([
             element: <SignUp/>
         },
         {
+            path: '/product',
+            element: <Product/>
+        },
+        {
             path: '/cart',
             element: <Cart/>
+        },
+        {
+            path: '/wishlist',
+            element: <Wishlist/>
         },
         {
             path: '/checkout',

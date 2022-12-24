@@ -4,7 +4,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Laptops from './Laptops';
+import Laptops from '../Laptop';
+
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -42,6 +44,7 @@ function a11yProps(index) {
 const TopProducts = () => {
     const [value, setValue] = React.useState(0);
 
+
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
@@ -70,7 +73,7 @@ const TopProducts = () => {
             </div>
             <div className='mt-10'>
             <TabPanel value={value} index={0}>
-               <Laptops/>
+               <Laptops />
             </TabPanel>
             <TabPanel value={value} index={1}>
                 Item Two

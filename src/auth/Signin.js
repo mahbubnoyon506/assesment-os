@@ -12,7 +12,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 const Signin = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [show, setShow] = useState(false);
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [ user, loading, error] = useSignInWithGoogle(auth);
     const [
         signInWithEmailAndPassword,
         createUser,

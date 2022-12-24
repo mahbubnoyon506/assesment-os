@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 import { toast } from 'react-toastify';
-// import Loader from '../Loader';
 import useToken from '../hooks/useToken';
 import SocialLogin from './SocialLogin';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-// import signUp from '../../assets/images/Signup.jpg'
+
 
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();

@@ -5,27 +5,20 @@ import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import CircleIcon from '@mui/icons-material/Circle';
 import ProductCarousel from './ProductCarousel';
-import OpenCart from '../Components/ShoppingCart/OpenCart';
-// import { useAuthState } from 'react-firebase-hooks/auth';
-// import auth from '../firebase.init';
+import OpenCart from './OpenCart';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Product = () => {
-    // const [user] = useAuthState(auth);
-    const user = ''
+    const [user] = useAuthState(auth);
+
     const navigate = useNavigate()
     const { id } = useParams();
     const [product, setProduct] = useState('');
     const [value, setValue] = React.useState(5);
     const [openCart, setOpenCart] = useState(false)
 
-    useEffect(() => {
-        (async () => {
-             await axios.get(`http://localhost:5000/api/product/${id}`)
-                .then(res => {
-                    setProduct(res.data.data[0])
-                })
-        })()
-    }, [id]);
+
 
 
     const handleAddCart = (e) => {

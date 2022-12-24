@@ -7,18 +7,18 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { FiLogIn, FiLogOut } from 'react-icons/fi'
 import { Button, Menu, MenuItem } from '@mui/material';
 import OpenCart from '../components/Products/OpenCart'
-import OpenWishlist from '../components/Products/OpenWishlist'
+import OpenWishlist from '../components/Products/Wishlist'
 import { Link, NavLink } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import {signOut } from 'firebase/auth';
+import { signOut } from 'firebase/auth';
 import auth from '../firebase.init';
 
 
 const Header = () => {
     const [user] = useAuthState(auth)
-    console.log(user)
+    // console.log(user)
     const [openCart, setOpenCart] = useState(false);
-    const [openWishList, setOpenWishList] = React.useState(null);
+    // const [openWishList, setOpenWishList] = React.useState(null);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClickAccount = (event) => {
@@ -32,12 +32,12 @@ const Header = () => {
         setOpenCart(event.currentTarget);
     };
 
-    const handleClickWish = (event) => {
-        setOpenWishList(event.currentTarget);
-    };
+    // const handleClickWish = (event) => {
+    //     setOpenWishList(event.currentTarget);
+    // };
     const logout = () => {
         signOut(auth);
-      };
+    };
 
     return (
         <div className=''>
@@ -76,7 +76,7 @@ const Header = () => {
                                 >
                                     <Link to='/dashboard'><MenuItem onClick={handleClose}> <MdOutlineDashboard className='mr-2' size={20} /> Dashboard</MenuItem></Link>
                                     <Link to=''><MenuItem onClick={handleClose}> <BsPersonCircle className='mr-2' size={20} /> Profile</MenuItem></Link>
-                                    <MenuItem onClick={() => {handleClose(); logout();}}> <FiLogOut className='mr-2' size={20} /> Logout</MenuItem>
+                                    <MenuItem onClick={() => { handleClose(); logout(); }}> <FiLogOut className='mr-2' size={20} /> Logout</MenuItem>
                                 </Menu>
                             </div>
                     }
@@ -100,20 +100,20 @@ const Header = () => {
                 </div>
                 <div className='basis-1/4 flex justify-evenly text-base-100'>
                     <div>
-                        <button className='cursor-pointer'
-                            onClick={handleClickWish}
+                        <Link to='/wishlist' className='cursor-pointer'
+
                         >
                             <FaRegHeart className='mx-auto' size={30} color='#ff1e00' />
                             <p>Your Wishlist</p>
-                        </button>
-                        {
+                        </Link>
+                        {/* {
                             openWishList &&
                             <OpenWishlist
                                 className=""
                                 openWishList={openWishList}
                                 setOpenWishList={setOpenWishList}
                             ></OpenWishlist>
-                        }
+                        } */}
                     </div>
                     <div>
                         <button className='cursor-pointer'
