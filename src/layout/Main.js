@@ -7,7 +7,9 @@ const Main = () => {
     return (
         <div>
            <Header/>
+           <div className='md:mt-16'>
            <Outlet/>
+           </div>
            <Footer/> 
         </div>
     );
