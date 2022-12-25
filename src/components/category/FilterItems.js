@@ -28,7 +28,7 @@ const Laptops = ({category}) => {
     useEffect( () => {
        setFilterItems(products.filter(item => item.category == category))
     }, [products, category])
-// console.log(tab)
+
 console.log({products, filterItems, category})
 
     if(loading){

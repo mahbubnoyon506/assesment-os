@@ -40,8 +40,15 @@ const Header = () => {
     const { state: { wishlist, loading, error } } = useProducts();
     const { state: { cart } } = useProducts();
 
+    const menuItems = [
+        { "category": "laptop" },
+        { "category": "smartphone" },
+        { "category": "camera" },
+        { "category": "accessories" },
+    ]
+
     return (
-        <div className=''>
+        <div className='sticky top-0 z-50'>
             <div className='text-base-100 bg-[#1E1F29] py-2 px-5 md:px-10 flex justify-between'>
                 <div className=' '>
                     <ul className='md:flex'>
@@ -135,11 +142,11 @@ const Header = () => {
             </div>
             <div className='bg-base-100 py-4 border-b-2 border-secondary md:flex justify-center'>
                 <NavLink to='/' className='block md:inline-block mx-5 text-lg font-semibold'>Home</NavLink>
-                <NavLink to='#' className='block md:inline-block mx-5 text-lg font-semibold'>Hot Deals</NavLink>
-                <NavLink to='#' className='block md:inline-block mx-5 text-lg font-semibold'>Laptop</NavLink>
-                <NavLink to='#' className='block md:inline-block mx-5 text-lg font-semibold'>Cameras</NavLink>
-                <NavLink to='#' className='block md:inline-block mx-5 text-lg font-semibold'>Smartphones</NavLink>
-                <NavLink to='#' className='block md:inline-block mx-5 text-lg font-semibold'>Accessories</NavLink>
+                {
+                    menuItems.map((menu, intex) =>
+                        <NavLink to={`/${menu.category}`} className='block md:inline-block mx-5 text-lg font-semibold capitalize'>{menu.category}</NavLink>
+                    )
+                }
             </div>
         </div >
     );

@@ -10,6 +10,7 @@ import Customers from "../pages/Dashboard/AdminDashboard/Customers";
 import Orders from "../pages/Dashboard/AdminDashboard/Orders";
 import Products from "../pages/Dashboard/AdminDashboard/Products";
 import Dashboard from "../pages/Dashboard/Dashboars";
+import FilterPage from "../pages/FilterPage";
 
 
 import Home from "../pages/Home/Home";
@@ -25,6 +26,10 @@ const routes = createBrowserRouter([
         {
             path: '/',
             element: <Home/>
+        },
+        {
+            path: '/:category',
+            element: <FilterPage/>
         },
         {
             path: '/signin',
