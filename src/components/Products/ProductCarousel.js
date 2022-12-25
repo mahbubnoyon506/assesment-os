@@ -7,8 +7,8 @@ import "swiper/css/thumbs";
 import "../../Global.css";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 
-export default function ProductCarousel({productImage}) {
-    console.log(productImage)
+export default function ProductCarousel({product}) {
+    console.log(product)
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const slides = [
         { image: "" },
@@ -34,7 +34,7 @@ export default function ProductCarousel({productImage}) {
                 {
                     slides.map((slide, index) =>
                         <SwiperSlide key={index}>
-                            {/* <img src={product.image} alt='' /> */}
+                            <img src={product.image} alt='' />
                         </SwiperSlide>
                     )
                 }
@@ -52,7 +52,7 @@ export default function ProductCarousel({productImage}) {
                 {
                     slides.map((slide, index) =>
                         <SwiperSlide key={index}>
-                            {/* <img src={product.image} alt='' /> */}
+                            <img src={product.image} alt='' />
                         </SwiperSlide>
                     )
                 }

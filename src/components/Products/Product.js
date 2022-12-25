@@ -43,6 +43,7 @@ const Product = () => {
             <div className='lg:grid grid-cols-2 gap-10 lg:p-20 md:p-10 p-5'>
                 <div className='w-96'>
                     <img src={product.image} alt="" />
+                    {/* <ProductCarousel product={product}/> */}
                 </div>
                 <div className=''>
                     <h2 className='text-2xl text-neutral'>{product.model}</h2>
@@ -60,6 +61,7 @@ const Product = () => {
                     <div className='pt-5'>
                         <p className='text-neutral pt-2'>{product?.keyFeature}</p>
                     </div>
+                
                     <div className='w-48 my-5'>
                         {
                             user ?
@@ -67,12 +69,12 @@ const Product = () => {
                                 :
                                 navigate('/signin')
                         }
+                        {
+                            openCart && <OpenCart openCart={openCart} setOpenCart={setOpenCart}></OpenCart>
+                        }
                     </div>
                 </div>
             </div>
-            {
-                openCart && <OpenCart openCart={openCart} setOpenCart={setOpenCart}></OpenCart>
-            }
         </div>
     );
 };

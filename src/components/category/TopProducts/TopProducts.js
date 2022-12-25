@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Laptops from '../Laptop';
+import FilterItems from '../FilterItems';
+import { useProducts } from '../../../context/ProductProvider';
 
 
 
@@ -45,9 +46,18 @@ const TopProducts = () => {
     const [value, setValue] = React.useState(0);
 
 
+
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    const tabs = [
+        { "category" : "laptop"},
+        { "category" : "smartphone"},
+        { "category" : "camera"},
+        { "category": "accessories"},
+    ]
+
     return (
         <div className='px-10 py-10'>
             <div className='md:flex justify-between items-center'>
@@ -72,18 +82,13 @@ const TopProducts = () => {
                 </div>
             </div>
             <div className='mt-10'>
-            <TabPanel value={value} index={0}>
-               <Laptops />
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                Item Two
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                Item Three
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-                Item Three
-            </TabPanel>
+                {
+                    tabs.map((tab, index) =>
+                        <TabPanel value={value} index={index}>
+                            <FilterItems category={tab.category}/>
+                        </TabPanel>
+                    )
+                }
             </div>
         </div>
     );

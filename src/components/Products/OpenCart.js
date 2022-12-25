@@ -64,7 +64,7 @@ export default function OpenCart({ openCart, setOpenCart }) {
   }
   console.log(cart)
   return (
-    <div>
+    <div className="">
       <Menu
         id="basic-menu"
         anchorEl={openCart}

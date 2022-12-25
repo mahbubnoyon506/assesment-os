@@ -3,6 +3,7 @@
     {
       "_id" : 1,
       "model": "AMD Ryzen 5 5600X Gaming PC",
+      "category": "laptop",
       "image": "https://live.staticflickr.com/65535/52522584794_4a9898a992_o.jpg",
       "status": true,
       "keyFeature": [
@@ -42,8 +43,9 @@
     },
     {
       "_id" : 2,
-      "model": "Intel 10th Gen Core i3-10100 Gaming PC",
-      "image": "https://live.staticflickr.com/65535/52521844202_dd853335c9_o.jpg",
+      "model": "14 inch Win 11 brand new notebook",
+      "category": "laptop",
+      "image": "https://i.ibb.co/P5Y0fWy/9.webp",
       "status": true,
       "keyFeature": [
         "MSI H510M-A PRO Intel 10th Gen and 11th Gen Mirco-ATX Motherboard",
@@ -79,8 +81,9 @@
     },
     {
       "_id" : 3,
-      "model": "AMD Ryzen 5 3600 Gaming PC",
-      "image": "https://live.staticflickr.com/65535/52522855818_98bdd4c07a_o.jpg",
+      "model": "14 inch Win 11 brand new notebook",
+      "category": "laptop",
+      "image": "https://i.ibb.co/kHDfndn/10.webp",
       "status": true,
       "keyFeature": [
         "MSI B450 TOMAHAWK MAX AM4 AMD ATX Motherboard (China)",
@@ -117,6 +120,7 @@
     {
       "_id" : 4,
       "model": "Gaming PC 10th Gen Core i5-10400f",
+      "category": "laptop",
       "image": "https://live.staticflickr.com/65535/52522584684_9fa14a3332_o.jpg",
       "status": true,
       "keyFeature": [
@@ -153,17 +157,18 @@
     },
     {
       "_id" : 5,
-      "model": "Intel 10th Gen Core i7-10700 Gaming PC",
-      "image": "https://live.staticflickr.com/65535/52522308736_8453894269_o.jpg",
+      "model": "High Quality i 14 Pro Max",
+      "category": "smartphone",
+      "image": "https://i.ibb.co/LQf4Yzv/11.webp",
       "status": true,
       "rating": 5,
       "keyFeature": [
-        "ASRock B560M Steel Legend 10th and 11th Gen Micro ATX Motherboard",
-        "Intel 10th Gen Core i7-10700 Processor",
-        "16GB RAM + 1TB HDD + 256GB SSD",
-        "GeForce GTX 1660 Super NB 6GB-V2 Graphics Card"
+        "5G 6.8 Inch Original Mobile Phone",
+        "16GB+1TB Large Memory",
+        "Smart Phone Beauty Camera ",
+        "Gaming Cellphone"
       ],
-      "price": 102200,
+      "price": 10220,
       "spec": [
         {
           "processor": "Intel 10th Gen Core i7-10700 Processor"
@@ -190,8 +195,9 @@
     },
     {
       "_id" : 6,
-      "model": "Intel Core i5-11400 11th Gen Gaming PC",
-      "image": "https://live.staticflickr.com/65535/52522308721_4f2de69503_o.jpg",
+      "model": "XIAO M12 ULTRA PHONE",
+      "category": "smartphone",
+      "image": "https://i.ibb.co/vY3JDdg/12.webp",
       "status": true,
       "keyFeature": [
         "Intel 11th Gen Core i5-11400 Rocket Lake Processor",
@@ -227,8 +233,9 @@
     },
     {
       "_id" : 7,
-      "model": "Intel 11th Gen Core i5-11400f Gaming PC",
-      "image": "https://live.staticflickr.com/65535/52522855818_98bdd4c07a_o.jpg",
+      "model": "Xiao M12 ULTRA",
+      "category": "smartphone",
+      "image": "https://i.ibb.co/1MSk7jK/13.webp",
       "status": true,
       "keyFeature": [
         "Intel 11th Gen Core i5-11400F Rocket Lake Processor",
@@ -267,8 +274,337 @@
     },
     {
       "_id" : 8,
-      "model": "AMD Ryzen 7 5800X3D Gaming PC",
-      "image": "https://live.staticflickr.com/65535/52521844332_5f738162d8_o.jpg",
+      "model": "Xiao M12 ULTRA",
+      "category": "smartphone",
+      "image": "https://i.ibb.co/rxmycNK/14.webp",
+      "status": true,
+      "keyFeature": [
+        "AMD Ryzen 7 5800X3D Processor",
+        "ASROCK B550 STEEL LEGEND AMD B550 Chipset Motherboard",
+        "32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSD",
+        "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+      ],
+      "price": 399999,
+      "rating": 3,
+      "spec": [
+        {
+          "processor": "AMD Ryzen 7 5800X3D Processor"
+        },
+        {
+          "motherboard": "ASRock B550 Steel Legend DDR4 AMD AM4 ATX Motherboard"
+        },
+        {
+          "ram": "Team T-Force Night Hawk RGB 8GB (KIT) 3200MHz DDR4 RAM (4 UNIT)"
+        },
+        {
+          "graphics": "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+        },
+        {
+          "storage": "Samsung 980 Pro 500GB PCIe 4.0 M.2 NVMe SSD"
+        },
+        {
+          "casing": "Antec TORQUE Black + Red Aluminum ATX Mid Tower Gaming Casing"
+        },
+        {
+          "psu": "Antec HCG-750 Gold Series 750W Full Modular Power Supply"
+        },
+        {
+          "cooler": "Antec Prizm X 120 ARGB 3+C Cooling Fan"
+        }
+      ]
+    },
+    {
+      "_id" : 9,
+      "model": "Professional Handheld HD DV SLR Digital Camcorder",
+      "category": "camera",
+      "image": "https://i.ibb.co/0sbcGXN/8.webp",
+      "status": true,
+      "keyFeature": [
+        "AMD Ryzen 7 5800X3D Processor",
+        "ASROCK B550 STEEL LEGEND AMD B550 Chipset Motherboard",
+        "32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSD",
+        "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+      ],
+      "price": 399999,
+      "rating": 3,
+      "spec": [
+        {
+          "processor": "AMD Ryzen 7 5800X3D Processor"
+        },
+        {
+          "motherboard": "ASRock B550 Steel Legend DDR4 AMD AM4 ATX Motherboard"
+        },
+        {
+          "ram": "Team T-Force Night Hawk RGB 8GB (KIT) 3200MHz DDR4 RAM (4 UNIT)"
+        },
+        {
+          "graphics": "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+        },
+        {
+          "storage": "Samsung 980 Pro 500GB PCIe 4.0 M.2 NVMe SSD"
+        },
+        {
+          "casing": "Antec TORQUE Black + Red Aluminum ATX Mid Tower Gaming Casing"
+        },
+        {
+          "psu": "Antec HCG-750 Gold Series 750W Full Modular Power Supply"
+        },
+        {
+          "cooler": "Antec Prizm X 120 ARGB 3+C Cooling Fan"
+        }
+      ]
+    },
+    {
+      "_id" : 10,
+      "model": "Digital Zoom Photo Camera ",
+      "category": "camera",
+      "image": "https://i.ibb.co/k9sYXzZ/7.webp",
+      "status": true,
+      "keyFeature": [
+        "AMD Ryzen 7 5800X3D Processor",
+        "ASROCK B550 STEEL LEGEND AMD B550 Chipset Motherboard",
+        "32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSD",
+        "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+      ],
+      "price": 399999,
+      "rating": 3,
+      "spec": [
+        {
+          "processor": "AMD Ryzen 7 5800X3D Processor"
+        },
+        {
+          "motherboard": "ASRock B550 Steel Legend DDR4 AMD AM4 ATX Motherboard"
+        },
+        {
+          "ram": "Team T-Force Night Hawk RGB 8GB (KIT) 3200MHz DDR4 RAM (4 UNIT)"
+        },
+        {
+          "graphics": "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+        },
+        {
+          "storage": "Samsung 980 Pro 500GB PCIe 4.0 M.2 NVMe SSD"
+        },
+        {
+          "casing": "Antec TORQUE Black + Red Aluminum ATX Mid Tower Gaming Casing"
+        },
+        {
+          "psu": "Antec HCG-750 Gold Series 750W Full Modular Power Supply"
+        },
+        {
+          "cooler": "Antec Prizm X 120 ARGB 3+C Cooling Fan"
+        }
+      ]
+    },
+    {
+      "_id" : 11,
+      "model": "Sony Alpha A7r2 a7s2 46MP 16.2MP 4K",
+      "category": "camera",
+      "image": "https://i.ibb.co/NWC9GD8/6.webp",
+      "status": true,
+      "keyFeature": [
+        "AMD Ryzen 7 5800X3D Processor",
+        "ASROCK B550 STEEL LEGEND AMD B550 Chipset Motherboard",
+        "32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSD",
+        "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+      ],
+      "price": 399999,
+      "rating": 3,
+      "spec": [
+        {
+          "processor": "AMD Ryzen 7 5800X3D Processor"
+        },
+        {
+          "motherboard": "ASRock B550 Steel Legend DDR4 AMD AM4 ATX Motherboard"
+        },
+        {
+          "ram": "Team T-Force Night Hawk RGB 8GB (KIT) 3200MHz DDR4 RAM (4 UNIT)"
+        },
+        {
+          "graphics": "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+        },
+        {
+          "storage": "Samsung 980 Pro 500GB PCIe 4.0 M.2 NVMe SSD"
+        },
+        {
+          "casing": "Antec TORQUE Black + Red Aluminum ATX Mid Tower Gaming Casing"
+        },
+        {
+          "psu": "Antec HCG-750 Gold Series 750W Full Modular Power Supply"
+        },
+        {
+          "cooler": "Antec Prizm X 120 ARGB 3+C Cooling Fan"
+        }
+      ]
+    },
+    {
+      "_id" : 12,
+      "model": "Sd CardDigital Camera HD Professional Camera",
+      "category": "camera",
+      "image": "https://i.ibb.co/02rr0CL/5.webp",
+      "status": true,
+      "keyFeature": [
+        "AMD Ryzen 7 5800X3D Processor",
+        "ASROCK B550 STEEL LEGEND AMD B550 Chipset Motherboard",
+        "32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSD",
+        "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+      ],
+      "price": 399999,
+      "rating": 3,
+      "spec": [
+        {
+          "processor": "AMD Ryzen 7 5800X3D Processor"
+        },
+        {
+          "motherboard": "ASRock B550 Steel Legend DDR4 AMD AM4 ATX Motherboard"
+        },
+        {
+          "ram": "Team T-Force Night Hawk RGB 8GB (KIT) 3200MHz DDR4 RAM (4 UNIT)"
+        },
+        {
+          "graphics": "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+        },
+        {
+          "storage": "Samsung 980 Pro 500GB PCIe 4.0 M.2 NVMe SSD"
+        },
+        {
+          "casing": "Antec TORQUE Black + Red Aluminum ATX Mid Tower Gaming Casing"
+        },
+        {
+          "psu": "Antec HCG-750 Gold Series 750W Full Modular Power Supply"
+        },
+        {
+          "cooler": "Antec Prizm X 120 ARGB 3+C Cooling Fan"
+        }
+      ]
+    },
+    {
+      "_id" : 13,
+      "model": "Plastic Magnetic Accessories Mobile Phone Holder",
+      "category": "accessories",
+      "image": "https://i.ibb.co/3cCPKvH/4.webp",
+      "status": true,
+      "keyFeature": [
+        "AMD Ryzen 7 5800X3D Processor",
+        "ASROCK B550 STEEL LEGEND AMD B550 Chipset Motherboard",
+        "32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSD",
+        "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+      ],
+      "price": 399999,
+      "rating": 3,
+      "spec": [
+        {
+          "processor": "AMD Ryzen 7 5800X3D Processor"
+        },
+        {
+          "motherboard": "ASRock B550 Steel Legend DDR4 AMD AM4 ATX Motherboard"
+        },
+        {
+          "ram": "Team T-Force Night Hawk RGB 8GB (KIT) 3200MHz DDR4 RAM (4 UNIT)"
+        },
+        {
+          "graphics": "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+        },
+        {
+          "storage": "Samsung 980 Pro 500GB PCIe 4.0 M.2 NVMe SSD"
+        },
+        {
+          "casing": "Antec TORQUE Black + Red Aluminum ATX Mid Tower Gaming Casing"
+        },
+        {
+          "psu": "Antec HCG-750 Gold Series 750W Full Modular Power Supply"
+        },
+        {
+          "cooler": "Antec Prizm X 120 ARGB 3+C Cooling Fan"
+        }
+      ]
+    },
+    {
+      "_id" : 14,
+      "model": "Phone Cover Accessories for iPhone 14 12 Case",
+      "category": "accessories",
+      "image": "https://i.ibb.co/4fSgktb/3.webp",
+      "status": true,
+      "keyFeature": [
+        "AMD Ryzen 7 5800X3D Processor",
+        "ASROCK B550 STEEL LEGEND AMD B550 Chipset Motherboard",
+        "32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSD",
+        "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+      ],
+      "price": 399999,
+      "rating": 3,
+      "spec": [
+        {
+          "processor": "AMD Ryzen 7 5800X3D Processor"
+        },
+        {
+          "motherboard": "ASRock B550 Steel Legend DDR4 AMD AM4 ATX Motherboard"
+        },
+        {
+          "ram": "Team T-Force Night Hawk RGB 8GB (KIT) 3200MHz DDR4 RAM (4 UNIT)"
+        },
+        {
+          "graphics": "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+        },
+        {
+          "storage": "Samsung 980 Pro 500GB PCIe 4.0 M.2 NVMe SSD"
+        },
+        {
+          "casing": "Antec TORQUE Black + Red Aluminum ATX Mid Tower Gaming Casing"
+        },
+        {
+          "psu": "Antec HCG-750 Gold Series 750W Full Modular Power Supply"
+        },
+        {
+          "cooler": "Antec Prizm X 120 ARGB 3+C Cooling Fan"
+        }
+      ]
+    },
+    {
+      "_id" : 15,
+      "model": "Flexible laidback phone stand desk phone holder",
+      "category": "accessories",
+      "image": "https://i.ibb.co/0XjrVkz/2.webp",
+      "status": true,
+      "keyFeature": [
+        "AMD Ryzen 7 5800X3D Processor",
+        "ASROCK B550 STEEL LEGEND AMD B550 Chipset Motherboard",
+        "32GB DDR4 RAM + 500GB PCIe 3.0 NVMe SSD",
+        "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+      ],
+      "price": 399999,
+      "rating": 3,
+      "spec": [
+        {
+          "processor": "AMD Ryzen 7 5800X3D Processor"
+        },
+        {
+          "motherboard": "ASRock B550 Steel Legend DDR4 AMD AM4 ATX Motherboard"
+        },
+        {
+          "ram": "Team T-Force Night Hawk RGB 8GB (KIT) 3200MHz DDR4 RAM (4 UNIT)"
+        },
+        {
+          "graphics": "Colorful GeForce RTX 4090 NB EX-V 24GB GDDR6X Graphics Card"
+        },
+        {
+          "storage": "Samsung 980 Pro 500GB PCIe 4.0 M.2 NVMe SSD"
+        },
+        {
+          "casing": "Antec TORQUE Black + Red Aluminum ATX Mid Tower Gaming Casing"
+        },
+        {
+          "psu": "Antec HCG-750 Gold Series 750W Full Modular Power Supply"
+        },
+        {
+          "cooler": "Antec Prizm X 120 ARGB 3+C Cooling Fan"
+        }
+      ]
+    },
+    {
+      "_id" : 16,
+      "model": "KC Listed 5V 1A KR charger",
+      "category": "accessories",
+      "image": "https://i.ibb.co/QNQbNmD/1.webp",
       "status": true,
       "keyFeature": [
         "AMD Ryzen 7 5800X3D Processor",

@@ -5,20 +5,21 @@ import { IoLogoUsd } from 'react-icons/io'
 import { BsPersonCircle } from 'react-icons/bs'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { FiLogIn, FiLogOut } from 'react-icons/fi'
-import { Button, Menu, MenuItem } from '@mui/material';
+import { Badge, Button, Menu, MenuItem } from '@mui/material';
 import OpenCart from '../components/Products/OpenCart'
 import OpenWishlist from '../components/Products/Wishlist'
 import { Link, NavLink } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import auth from '../firebase.init';
+import { useProducts } from '../context/ProductProvider';
 
 
 const Header = () => {
     const [user] = useAuthState(auth)
     // console.log(user)
     const [openCart, setOpenCart] = useState(false);
-    // const [openWishList, setOpenWishList] = React.useState(null);
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClickAccount = (event) => {
@@ -32,12 +33,12 @@ const Header = () => {
         setOpenCart(event.currentTarget);
     };
 
-    // const handleClickWish = (event) => {
-    //     setOpenWishList(event.currentTarget);
-    // };
     const logout = () => {
         signOut(auth);
     };
+
+    const { state: { wishlist, loading, error } } = useProducts();
+    const { state: { cart } } = useProducts();
 
     return (
         <div className=''>
@@ -103,7 +104,11 @@ const Header = () => {
                         <Link to='/wishlist' className='cursor-pointer'
 
                         >
-                            <FaRegHeart className='mx-auto' size={30} color='#ff1e00' />
+                            <div className='flex justify-center'>
+                                <Badge badgeContent={wishlist.length} color="primary">
+                                    <FaRegHeart className='mx-auto' size={30} color='#ff1e00' />
+                                </Badge>
+                            </div>
                             <p>Your Wishlist</p>
                         </Link>
                     </div>
@@ -111,7 +116,11 @@ const Header = () => {
                         <button className='cursor-pointer'
                             onClick={handleClick}
                         >
-                            <AiOutlineShoppingCart className='mx-auto' size={30} color='#ff1e00' />
+                            <div className='flex justify-center'>
+                                <Badge badgeContent={cart.length} color="primary">
+                                    <AiOutlineShoppingCart className='mx-auto' size={30} color='#ff1e00' />
+                                </Badge>
+                            </div>
                             <p>Your Cart</p>
                         </button>
                         {openCart &&

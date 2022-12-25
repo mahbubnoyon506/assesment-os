@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Rating from '@mui/material/Rating';
@@ -20,16 +20,29 @@ const bull = (
     </Box>
 );
 
-const Laptops = () => {
+const Laptops = ({category}) => {
+    const [filterItems, setFilterItems] = useState([])
    const {dispatch} = useProducts()
     const {state: {products, loading, error}} = useProducts();
 
-    console.log(products)
+    useEffect( () => {
+       setFilterItems(products.filter(item => item.category == category))
+    }, [products, category])
+// console.log(tab)
+console.log({products, filterItems, category})
+
+    if(loading){
+        return <p>Loading...</p>
+    }else if(error){
+        return <p>Something is going wrong.</p>
+    }else if(filterItems.length < 1 ){
+        return <p>No product found</p>
+    }
 
     return (
         <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-4'>
              {
-                products.map((product, index) =>
+                filterItems.map((product, index) =>
                     <Card sx={{ minWidth: '' }}>
                         <div className='flex justify-center'><img src={product.image} alt="" /></div>
                         <p className='text-center pt-8 text-[#BDBDBD]'>Category</p>
