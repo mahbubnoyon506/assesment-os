@@ -29,7 +29,7 @@ const SignUp = () => {
     const from = location?.state?.from?.pathname || '/';
 
     if (token) {
-        navigate('/adminDashboard')
+        navigate('/')
     }
     const onSubmit = async data => {
 
@@ -41,11 +41,11 @@ const SignUp = () => {
     };
 
     if (token) {
-        navigate('/adminDashboard')
+        navigate('/')
     }
     useEffect(() => {
         if (user) {
-            toast.success('Signin successd...')
+            toast.success('SignUP success...')
             navigate(from, { replace: true })
         }
     }, [user, navigate, from])

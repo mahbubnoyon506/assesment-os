@@ -12,17 +12,19 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 const Signin = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [show, setShow] = useState(false);
-    const [ user, loading, error] = useSignInWithGoogle(auth);
+    // const [ user, loading, error] = useSignInWithGoogle(auth);
     const [
         signInWithEmailAndPassword,
         createUser,
         createLoading,
         createError,
+        loading, 
+        error
     ] = useSignInWithEmailAndPassword(auth);
 
 
     // for jwt
-    const [token] = useToken(user || createUser)
+    const [token] = useToken(createUser)
     // for jwt
 
     const navigate = useNavigate();
@@ -35,8 +37,8 @@ const Signin = () => {
 
     useEffect(() => {
         if (token) {
-            toast.success('Signin successd...')
-            navigate(from, { replace: true })
+            toast.success('Signin success...')
+            navigate(from, { replace: true })  
         }
     }, [token, navigate, from])
 

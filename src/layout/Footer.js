@@ -8,14 +8,14 @@ const Footer = () => {
                 <div class="mx-auto p-6 border-t-2 border-secondary pt-10">
                     <div class=" flex justify-center items-center mb-5">
                         <div >
-                            <p className='text-4xl font-semibold text-[#5A5D5A]'>Sign Up for the <span className=' text-neutral'> NEWSLETTER </span></p>
+                            <p className='text-2xl md:text-4xl font-semibold text-[#5A5D5A]'>Sign Up for the <span className=' text-neutral'> NEWSLETTER </span></p>
                             <div className='flex justify-center items-center mt-5'>
                                 <input className='border rounded-full py-1 pl-2' type="email" name="" id="" placeholder='Your Email' />
                                 <Button sx={{ borderRadius: '45px', background: '#ff1e00', padding: '5px 10px', marginLeft: '-50px', '&:hover':{backgroundColor: '#011B39'} }} variant='contained'> Subscribe</Button>
                             </div>
                         </div>
                     </div>
-                    <div class="flex justify-center">
+                    <div class="flex justify-center mb-5">
                         {/* <span className='text-center block'>Get connected with us on social networks:</span> */}
                         <div className='flex'>
                             <a href="#!" class="mr-6 text-gray-600">

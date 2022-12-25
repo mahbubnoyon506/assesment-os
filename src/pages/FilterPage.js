@@ -27,8 +27,8 @@ const FilterPage = () => {
     }
 
     return (
-        <div className='px-5 md:px-10'>
-            <h2 className='text-neutral uppercase text-center text-3xl font-bold py-10'>{category}</h2>
+        <div className='px-5 md:px-10 pb-10'>
+            <h2 className='text-neutral uppercase text-2xl md:text-3xl font-bold py-10'>{category}</h2>
             <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-4'>
                 {
                     filterItems.map((product, index) =>

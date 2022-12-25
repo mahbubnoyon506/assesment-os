@@ -54,7 +54,7 @@ const Cart = () => {
 
     return (
         <div className='lg:p-20 md:-10 p-5'>
-            <h2 className='text-3xl font-bold pb-5'>Shopping Cart</h2>
+            <h2 className='text-2xl md:text-3xl font-bold text-neutral pb-5'>Shopping Cart</h2>
             <div className='grid lg:grid-cols-3 gap-8'>
                 <div className='lg:col-span-2'>
                     <table class="w-full">

@@ -19,8 +19,8 @@ const Header = () => {
     const [user] = useAuthState(auth)
     const [openCart, setOpenCart] = useState(false);
     const [openMenu, setOpenMenu] = useState(false)
-
     const [anchorEl, setAnchorEl] = React.useState(null);
+
     const open = Boolean(anchorEl);
     const handleClickAccount = (event) => {
         setAnchorEl(event.currentTarget);
@@ -52,15 +52,15 @@ const Header = () => {
             <div className='text-base-100 bg-[#1E1F29] py-2 px-5 md:px-10 flex justify-between'>
                 <div className=' '>
                     <ul className='md:flex'>
-                        <li className='font-semibold hover:text-primary mr-2'><a className='flex items-center' href=""><FaPhoneAlt className='mr-1' color='#ff1e00' /> +021-95-51-84</a></li>
-                        <li className='font-semibold hover:text-primary mr-2'><a className='flex items-center' href=""><FaEnvelope className='mr-1' color='#ff1e00' /> email@email.com</a></li>
-                        <li className='font-semibold hover:text-primary mr-2'><a className='flex items-center' href=""><MdLocationOn className='mr-1' color='#ff1e00' /> 1734 Stonecoal Road</a></li>
+                        <li className='md:font-semibold hover:text-primary mr-2'><a className='flex items-center' href=""><FaPhoneAlt className='mr-1' color='#ff1e00' /> +021-95-51-84</a></li>
+                        <li className='md:font-semibold hover:text-primary mr-2'><a className='flex items-center' href=""><FaEnvelope className='mr-1' color='#ff1e00' /> email@email.com</a></li>
+                        <li className='md:font-semibold hover:text-primary mr-2'><a className='flex items-center' href=""><MdLocationOn className='mr-1' color='#ff1e00' /> 1734 Stonecoal Road</a></li>
                     </ul>
                 </div>
                 <div className='md:flex'>
-                    <p className='font-semibold hover:text-primary mr-2 flex items-center'><IoLogoUsd color='#ff1e00' />BDT</p>
+                    <p className='md:font-semibold hover:text-primary mr-2 flex items-center'><IoLogoUsd color='#ff1e00' />BDT</p>
                     {
-                        !user ? <Link className='font-semibold hover:text-primary mr-2 flex items-center' to='/signin'> <FiLogIn className='mr-1' color='#ff1e00' />Sign In</Link> :
+                        !user ? <Link className='md:font-semibold hover:text-primary mr-2 flex items-center' to='/signin'> <FiLogIn className='mr-1' color='#ff1e00' />Sign In</Link> :
                             <div>
                                 <button
                                     id="basic-button"
@@ -68,7 +68,7 @@ const Header = () => {
                                     aria-haspopup="true"
                                     aria-expanded={open ? 'true' : undefined}
                                     onClick={handleClickAccount}
-                                    className='text-base-100 font-semibold hover:text-primary mr-2 flex items-center'
+                                    className='text-base-100 md:font-semibold hover:text-primary flex items-center text-left'
                                 >
                                     <BsPersonCircle className='mr-1' color='#ff1e00' />
                                     My Account
@@ -92,7 +92,7 @@ const Header = () => {
             </div>
             <div className='bg-[#15161D] py-3 px-5 md:px-10 md:flex flex-row justify-between items-center border-b-2 border-primary'>
                 <div className='basis-1/4 flex justify-between lg:justify-start pb-5 lg:pb-0'>
-                    <Link to='/' className='text-6xl font-bold text-base-100'>Electro</Link>
+                    <Link to='/' className='text-4xl md:text-6xl font-bold text-base-100'>Electro</Link>
                     <div onClick={() => setOpenMenu(!openMenu)} className='md:hidden'>
                         <MdMenu className='text-base-100 ' size={30} />
                     </div>
@@ -106,7 +106,7 @@ const Header = () => {
                             <option value="Category 3">Category 3</option>
                         </select>
                     </div>
-                    <input type="search" name="" id="" />
+                    <input className='w-full' type="search" name="" id="" />
                     <Button sx={{ borderRadius: '45px', background: '#ff1e00', padding: '5px 20px', '&:hover': { backgroundColor: '#011B39' } }} variant="contained" >Search</Button>
                 </div>
                 <div className='basis-1/4 flex justify-evenly text-base-100'>
@@ -143,20 +143,12 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className='bg-base-100 py-4 border-b-2 border-secondary hidden md:flex justify-center'>
-                <NavLink to='/' className='block md:inline-block mx-5 text-lg font-semibold'>Home</NavLink>
-                {
-                    menuItems.map((menu, intex) =>
-                        <NavLink to={`/${menu.category}`} className='block md:inline-block mx-5 text-lg font-semibold capitalize'>{menu.category}</NavLink>
-                    )
-                }
-            </div> */}
             <div className={`w-64 md:w-full bg-base-100 py-4 md:border-b-2 md:border-secondary absolute transition-all duration-500 ease-in md:md:flex justify-center md:top-auto ${openMenu ? 'top-[0px]' : 'top-[-300px]'}`}>
                 <div onClick={() => setOpenMenu(!openMenu)} className='flex justify-end md:hidden pr-3'><MdClose size={30}/></div>
-                <NavLink onClick={() => setOpenMenu(!openMenu)} to='/' className='block md:inline-block mx-5 text-lg font-semibold'>Home</NavLink>
+                <NavLink onClick={() => setOpenMenu(!openMenu)} to='/' className='block md:inline-block mx-5 text-lg font-semibold pb-2 my-auto'>Home</NavLink>
                 {
                     menuItems.map((menu, index) =>
-                        <NavLink onClick={() => setOpenMenu(!openMenu)} key={index} to={`/${menu.category}`} className='block md:inline-block mx-5 text-lg font-semibold capitalize py-2'>{menu.category}</NavLink>
+                        <NavLink onClick={() => setOpenMenu(!openMenu)} key={index} to={`/${menu.category}`} className='block md:inline-block mx-5 text-lg font-semibold capitalize pb-2'>{menu.category}</NavLink>
                     )
                 }
             </div>

@@ -55,9 +55,9 @@ const NewProducts = () => {
     ]
 
     return (
-        <div className='px-10 py-10'>
+        <div className='px-5 md:px-10 py-10'>
             <div className='md:flex justify-between items-center'>
-                <h2 className='uppercase text-3xl font-bold'>New Products</h2>
+                <h2 className='uppercase text-2xl md:text-3xl text-neutral font-bold'>New Products</h2>
                 <div className=''>
                     <Box sx={{ width: '100%', maxWidth: { sm: 480, md: 768, lg: 1024 } }}>
                         <Tabs

@@ -18,7 +18,7 @@ const Wishlist = () => {
     }else if(wishlist.length < 1){
         return (
             <div className='py-10'>
-                <h2 className='text-neutral uppercase text-center text-3xl font-bold'>Wishlist</h2>
+                <h2 className='text-neutral uppercase text-center text-2xl md:text-3xl font-bold'>Wishlist</h2>
                 <p className='text-lg text-center pt-3'>Add some products</p>
             </div>
         )
@@ -26,7 +26,7 @@ const Wishlist = () => {
 
     return (
     <div className='px-5 lg:px-10'>
-        <h2 className='text-neutral uppercase text-3xl font-bold py-10'>Wishlist</h2>
+        <h2 className='text-neutral uppercase text-2xl md:text-3xl font-bold py-10'>Wishlist</h2>
         <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-4'>
              {
                 wishlist.map((product, index) =>

@@ -27,7 +27,7 @@ const Checkout = () => {
 
     return (
         <div className='lg:p-20 md:p-10 p-5'>
-            <h2 className='text-3xl font-bold mb-10 p-0 text-left'>Shopping Cart</h2>
+            <h2 className='text-2xl md:text-3xl font-bold text-neutral mb-10 p-0 text-left'>Checkout</h2>
             <form action="">
                 <div className='lg:grid grid-cols-3 gap-5'>
                     <div className='col-span-2'>
