@@ -1,5 +1,5 @@
 import { Button, Card, Rating, Tooltip } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { BiDetail } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
@@ -10,6 +10,9 @@ const Wishlist = () => {
     const {dispatch} = useProducts()
     const {state: {wishlist, loading, error}} = useProducts();
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     if(loading){
         return <p>Loading...</p>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NewProducts from '../../components/category/NewProducts/NewProducts';
 import TopProducts from '../../components/category/TopProducts/TopProducts';
 import HotDeals from './HotDeals';
@@ -10,7 +10,9 @@ import MenuItem from '@mui/material/MenuItem';
 
 const Home = () => {
 
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
 
     return (

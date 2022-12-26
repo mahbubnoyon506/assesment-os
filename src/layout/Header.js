@@ -37,6 +37,7 @@ const Header = () => {
         signOut(auth);
     };
 
+
     const { state: { wishlist, loading, error } } = useProducts();
     const { state: { cart } } = useProducts();
 
@@ -101,9 +102,10 @@ const Header = () => {
                     <div className=''>
                         <select className='' name="" id="">
                             <option value="All Category" selected>All Category</option>
-                            <option value="Category 1">Category 1</option>
-                            <option value="Category 2">Category 2</option>
-                            <option value="Category 3">Category 3</option>
+                            <option value="Laptop">Laptop</option>
+                            <option value="Smartphone">Smartphone</option>
+                            <option value="Camera">Camera</option>
+                            <option value="Accessories">Accessories</option>
                         </select>
                     </div>
                     <input className='w-full' type="search" name="" id="" />

@@ -4,14 +4,31 @@ import routes from './routes/routes';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ProductProvider from './context/ProductProvider';
+import { useEffect, useState } from 'react';
+import Loader from './components/loader/Loader';
+import BackToTop from './components/backToTop/BackToTop';
 
 function App() {
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false)
+    }, [1500])
+  }, [])
+
   return (
     <div>
-      <ProductProvider>
-        <RouterProvider router={routes}></RouterProvider>
-      </ProductProvider>
-      <ToastContainer />
+      {
+        isLoading ? <Loader /> :
+          <ProductProvider>
+            <RouterProvider router={routes}></RouterProvider>
+            <BackToTop />
+            <ToastContainer />
+          </ProductProvider>
+      }
     </div>
   );
 }

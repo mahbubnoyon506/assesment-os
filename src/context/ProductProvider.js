@@ -10,7 +10,7 @@ const ProductProvider = ({children}) => {
   const [state, dispatch] = useReducer(productReducer, initialState);
    useEffect( () => {
      dispatch({type: FETCHING_START})
-          axios.get('http://localhost:8000/products')
+          axios.get('https://manufecture-website-server.onrender.com/products')
           .then( res=> dispatch({type: FETCHING_SUCCESS, payload: res.data}))
           .catch(dispatch({type: FETCHING_ERROR}))
    }, [])

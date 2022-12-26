@@ -12,12 +12,17 @@ const FilterPage = () => {
     const [filterItems, setFilterItems] = useState([])
     const { dispatch } = useProducts()
     const { state: { products, loading, error } } = useProducts();
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     useEffect(() => {
         setFilterItems(products.filter(item => item.category == category))
     }, [products, category])
 
-
+    
+    
     if (loading) {
         return <p>Loading...</p>
     } else if (error) {

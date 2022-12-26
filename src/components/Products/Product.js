@@ -4,7 +4,6 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import CircleIcon from '@mui/icons-material/Circle';
-import ProductCarousel from './ProductCarousel';
 import OpenCart from './OpenCart';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -43,7 +42,6 @@ const Product = () => {
             <div className='lg:grid grid-cols-2 gap-10 lg:p-20 md:p-10 p-5'>
                 <div className='w-96'>
                     <img src={product.image} alt="" />
-                    {/* <ProductCarousel product={product}/> */}
                 </div>
                 <div className=''>
                     <h2 className='text-2xl text-neutral'>{product.model}</h2>
