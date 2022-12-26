@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import { useProducts } from "../../context/ProductProvider";
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
@@ -13,6 +12,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Link } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
+import { REMOVE_FROM_CART } from "../../state/ProductState/actionTypes";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -89,20 +89,25 @@ export default function OpenCart({ openCart, setOpenCart }) {
                   </TableHead>
                   <TableBody>
                     {cart.map((row) => (
-                      <StyledTableRow key=''>
+                      <StyledTableRow key={row._id}>
                         <StyledTableCell component="th" scope="row" sx={{ width: '70px' }}>
                           <img src={row.image} alt="" />
                         </StyledTableCell>
                         <StyledTableCell align="right">{row.model}</StyledTableCell>
                         <StyledTableCell align="right">{row.price} </StyledTableCell>
-                        <StyledTableCell align="right" className='cursor-pointer' ><FaTrashAlt className='text-error' /></StyledTableCell>
+                        <StyledTableCell align="right" className='' >
+                          <button
+                            onClick={() => dispatch({ type: REMOVE_FROM_CART, payload: row })} >
+                            <FaTrashAlt className='text-error' />
+                          </button>
+                        </StyledTableCell>
                       </StyledTableRow>
                     ))}
                   </TableBody>
                 </Table>
               </TableContainer>
               <div className='flex justify-center'>
-                <Link onClick={handleClose} to='/cart' className='btn btn-sm btn-primary rounded-full text-white my-5 w-48'> <Button sx={{width: '100%', borderRadius: '0px', background: '#ff1e00', padding: '5px 20px', '&:hover': { backgroundColor: '#011B39' } }} variant="contained" >Checkout</Button></Link>
+                <Link onClick={handleClose} to='/cart' className='btn btn-sm btn-primary rounded-full text-white my-5 w-48'> <Button sx={{ width: '100%', borderRadius: '0px', background: '#ff1e00', padding: '5px 20px', '&:hover': { backgroundColor: '#011B39' } }} variant="contained" >Checkout</Button></Link>
               </div>
             </div>
         }

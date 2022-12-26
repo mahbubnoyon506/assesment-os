@@ -30,7 +30,7 @@ const Laptops = ({category}) => {
        setFilterItems(products.filter(item => item.category == category))
     }, [products, category])
 
-console.log({products, filterItems, category})
+// console.log({products, filterItems, category})
 
     if(loading){
         return <p>Loading...</p>
@@ -43,8 +43,8 @@ console.log({products, filterItems, category})
     return (
         <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-4'>
              {
-                filterItems.map((product, index) =>
-                    <Card sx={{ minWidth: '' }}>
+                filterItems.map((product) =>
+                    <Card key={product._id} sx={{ minWidth: '' }}>
                         <div className='flex justify-center'><img src={product.image} alt="" /></div>
                         <p className='text-center pt-8 text-[#BDBDBD]'>Category</p>
                         <h2 className=' font-semibold text-center pt-3'>{product.model}</h2>

@@ -10,11 +10,7 @@ import { useProducts } from '../../context/ProductProvider';
 
 const Checkout = () => {
 
-
     const { state: { cost, loading, error } } = useProducts();
-
-
-
 
     const StyledBadge = styled(Badge)(({ theme }) => ({
         '& .MuiBadge-badge': {

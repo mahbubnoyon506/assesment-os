@@ -57,19 +57,19 @@ const Cart = () => {
             <h2 className='text-2xl md:text-3xl font-bold text-neutral pb-5'>Shopping Cart</h2>
             <div className='grid lg:grid-cols-3 gap-8'>
                 <div className='lg:col-span-2'>
-                    <table class="w-full">
+                    <table className="w-full">
                         <thead>
                             <tr>
-                                <th class="bg-[#F5F7FA] py-3"></th>
-                                <th class="text-left pl-5 bg-[#F5F7FA] py-3">Name</th>
-                                <th class="text-left pl-5 bg-[#F5F7FA] py-3">Price</th>
-                                <th class=" pl-5 bg-[#F5F7FA] py-3">Action</th>
+                                <th className="bg-[#F5F7FA] py-3"></th>
+                                <th className="text-left pl-5 bg-[#F5F7FA] py-3">Name</th>
+                                <th className="text-left pl-5 bg-[#F5F7FA] py-3">Price</th>
+                                <th className=" pl-5 bg-[#F5F7FA] py-3">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {
                                 cart.map((item) =>
-                                    <ItemTable key={item.id} item={item}></ItemTable>
+                                    <ItemTable key={item._id} item={item} dispatch={dispatch}></ItemTable>
                                 )
                             }
                         </tbody>

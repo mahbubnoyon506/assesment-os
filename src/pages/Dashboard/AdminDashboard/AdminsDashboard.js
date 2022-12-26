@@ -7,9 +7,10 @@ const AdminsDashboard = () => {
             <div className='grid gap-5 md:grid-cols-2'>
                 <div className='grid gap-5 md:grid-cols-2'>
                     {
-                        ardItem.map(item =>
+                        ardItem.map((item, index) =>
 
                             <Paper
+                                key={index}
                                 sx={{
                                     p: 3,
                                     display: 'flex',

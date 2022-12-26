@@ -32,8 +32,8 @@ const Wishlist = () => {
         <h2 className='text-neutral uppercase text-2xl md:text-3xl font-bold py-10'>Wishlist</h2>
         <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-4'>
              {
-                wishlist.map((product, index) =>
-                    <Card sx={{ minWidth: '' }}>
+                wishlist.map((product) =>
+                    <Card key={product._id} sx={{ minWidth: '' }}>
                         <div className='flex justify-center'><img src={product.image} alt="" /></div>
                         <p className='text-center pt-8 text-[#BDBDBD]'>Category</p>
                         <h2 className=' font-semibold text-center pt-3'>{product.model}</h2>

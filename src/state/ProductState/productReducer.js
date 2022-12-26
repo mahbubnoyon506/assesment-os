@@ -1,4 +1,4 @@
-import {ADD_TO_CART, ADD_TO_WISHLIST, FETCHING_ERROR, FETCHING_START, FETCHING_SUCCESS, PRICE_CALCULATION} from './actionTypes'
+import {ADD_TO_CART, ADD_TO_WISHLIST, FETCHING_ERROR, FETCHING_START, FETCHING_SUCCESS, PRICE_CALCULATION, REMOVE_FROM_CART} from './actionTypes'
 
 export const initialState = {
     loading : false,
@@ -35,6 +35,11 @@ export const productReducer = (state, action) => {
                 ...state,
                 cart : [...state.cart, action.payload]
             };
+        case REMOVE_FROM_CART: 
+         return {
+            ...state,
+            cart : state.cart.filter((product) => product._id !== action.payload._id )
+         };
         case ADD_TO_WISHLIST: 
          return {
             ...state,

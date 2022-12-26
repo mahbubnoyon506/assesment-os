@@ -80,7 +80,7 @@ const NewProducts = () => {
             <div className='mt-10'>
                 {
                     tabs.map((tab, index) =>
-                        <TabPanel value={value} index={index}>
+                        <TabPanel key={index} value={value} index={index}>
                             <FilterItems category={tab.category} />
                         </TabPanel>
                     )
