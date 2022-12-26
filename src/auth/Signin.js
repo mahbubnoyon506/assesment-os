@@ -53,7 +53,7 @@ const Signin = () => {
     return (
         <div className="w-full bg-white pb-16 px-4">
             <div className="flex justify-center items-center">
-                <div className="w-96 shadow-2xl rounded-xl w-4/5 p-10 mt-16">
+                <div className="w-96 shadow-2xl rounded-xl p-10 mt-16">
                     <p className="text-3xl mb-6 text-center font-extrabold leading-6 text-gray-800">
                         Sign In
                     </p>
@@ -84,7 +84,7 @@ const Signin = () => {
                             {errors.password && <small className='text-red-500'>Password is required!!</small>}
                         </div>
                         <div className="mt-8">
-                            <input type={'submit'} aria-label="create my account" className="focus:ring-2 focus:ring-offset-2 btn bg-primary border-none hover:bg-neutral  text-md font-semibold leading-none text-base-100 focus:outline-none rounded  py-4 w-full cursor-pointer" value={'Signin'} />
+                            <input type={'submit'} aria-label="create my account" className="focus:ring-2 focus:ring-offset-2 btn bg-primary border-none hover:bg-neutral  text-md font-semibold leading-none text-base-100 focus:outline-none rounded  py-4 w-full cursor-pointer" value={'Sign In'} />
                         </div>
                     </form>
                     <div className="w-full flex items-center justify-between py-5">
