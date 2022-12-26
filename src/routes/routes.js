@@ -14,71 +14,76 @@ import FilterPage from "../pages/FilterPage";
 
 
 import Home from "../pages/Home/Home";
+import NotFound from "../pages/notFound/NotFound";
 
 const { createBrowserRouter } = require("react-router-dom");
 
 
 const routes = createBrowserRouter([
-   {
-    path: '/',
-    element: <Main/>,
-    children : [
-        {
-            path: '/',
-            element: <Home/>
-        },
-        {
-            path: '/:category',
-            element: <FilterPage/>
-        },
-        {
-            path: '/signin',
-            element: <Signin/>
-        },
-        {
-            path: '/signup',
-            element: <SignUp/>
-        },
-        {
-            path: '/product/:id',
-            element: <Product/>
-        },
-        {
-            path: '/cart',
-            element: <Cart/>
-        },
-        {
-            path: '/wishlist',
-            element: <Wishlist/>
-        },
-        {
-            path: '/checkout',
-            element: <Checkout/>
-        }
-    ]
-   },
-   {
-    path: '/dashboard',
-    element: <Dashboard/>,
-    children: [
-        {
-            path: '/dashboard',
-            element: <AdminsDashboard/>
-        },
-        {
-            path: '/dashboard/orders',
-            element: <Orders/>
-        },
-        {
-            path: '/dashboard/customers',
-            element: <Customers/>
-        },
-        {
-            path: '/dashboard/products',
-            element: <Products/>
-        },
-    ]
-   }   
+    {
+        path: '/',
+        element: <Main />,
+        children: [
+            {
+                path: '/',
+                element: <Home />
+            },
+            {
+                path: '/product/:category',
+                element: <FilterPage />
+            },
+            {
+                path: '/signin',
+                element: <Signin />
+            },
+            {
+                path: '/signup',
+                element: <SignUp />
+            },
+            {
+                path: '/product/:id',
+                element: <Product />
+            },
+            {
+                path: '/cart',
+                element: <Cart />
+            },
+            {
+                path: '/wishlist',
+                element: <Wishlist />
+            },
+            {
+                path: '/checkout',
+                element: <Checkout />
+            },
+            {
+                path: '/*',
+                element: <NotFound />
+            },
+        ]
+    },
+    {
+        path: '/dashboard',
+        element: <Dashboard />,
+        children: [
+            {
+                path: '/dashboard',
+                element: <AdminsDashboard />
+            },
+            {
+                path: '/dashboard/orders',
+                element: <Orders />
+            },
+            {
+                path: '/dashboard/customers',
+                element: <Customers />
+            },
+            {
+                path: '/dashboard/products',
+                element: <Products />
+            },
+        ]
+    }
 
 
 ])

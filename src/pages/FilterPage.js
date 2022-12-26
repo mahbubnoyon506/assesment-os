@@ -6,6 +6,7 @@ import { FaRegHeart } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
 import { useProducts } from '../context/ProductProvider';
 import { ADD_TO_CART, ADD_TO_WISHLIST } from '../state/ProductState/actionTypes';
+import ComponentLoader from '../components/loader/CoponentLoader'
 
 const FilterPage = () => {
     const { category } = useParams();
@@ -26,7 +27,7 @@ const FilterPage = () => {
     if (loading) {
         return <p>Loading...</p>
     } else if (error) {
-        return <p>Something is going wrong.</p>
+        return <ComponentLoader/>
     } else if (filterItems.length < 1) {
         return <p>No product found</p>
     }
