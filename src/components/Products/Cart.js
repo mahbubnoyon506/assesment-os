@@ -45,7 +45,7 @@ const Cart = () => {
         },
       }));
 
-      console.log({total, vat, delivery, grandTotal})
+
       const handleAddCost = () => {
         const cost = {total, vat, delivery, grandTotal}
         dispatch({type: PRICE_CALCULATION, payload: cost})

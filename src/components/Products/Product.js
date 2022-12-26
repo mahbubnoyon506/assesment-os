@@ -1,15 +1,15 @@
-import axios from 'axios';
+
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import CircleIcon from '@mui/icons-material/Circle';
-import OpenCart from './OpenCart';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { useProducts } from '../../context/ProductProvider';
 import { Button } from '@mui/material';
 import { ADD_TO_CART } from '../../state/ProductState/actionTypes';
+import { useProducts } from '../../context/ProductProvider';
+import ComponentLoader from '../../components/loader/CoponentLoader'
 
 const Product = () => {
     const [user] = useAuthState(auth);
@@ -18,34 +18,34 @@ const Product = () => {
     const { id } = useParams();
     const [product, setProduct] = useState('');
     const [value, setValue] = React.useState(5);
-    const [openCart, setOpenCart] = useState(false);
     const { dispatch } = useProducts()
     const { state: { products, loading, error } } = useProducts();
 
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     useEffect(() => {
         setProduct(products.find((item) => item._id == id))
     }, [products, id])
 
-    const handleClickOpen = () => {
-        setOpenCart(true);
-    };
 
     if (loading) {
         return <p>Loading...</p>
     } else if (error) {
-        return <p>Some error on item finds.</p>
+        return <ComponentLoader/>
     }
 
     return (
         <div>
             <div className='lg:grid grid-cols-2 gap-10 lg:p-20 md:p-10 p-5'>
                 <div className='w-96'>
-                    <img src={product.image} alt="" />
+                    <img src={product?.image} alt="" />
                 </div>
                 <div className=''>
-                    <h2 className='text-2xl text-neutral'>{product.model}</h2>
-                    <p className='text-lg font-semibold py-3'>{product.price} Taka</p>
+                    <h2 className='text-2xl text-neutral'>{product?.model}</h2>
+                    <p className='text-lg font-semibold py-3'>{product?.price} Taka</p>
                     <div className=''>
                         <Box
                             sx={{
@@ -59,16 +59,13 @@ const Product = () => {
                     <div className='pt-5'>
                         <p className='text-neutral pt-2'>{product?.keyFeature}</p>
                     </div>
-                
+
                     <div className='w-48 my-5'>
                         {
                             user ?
-                                <Button onClick={() => { handleClickOpen(); dispatch({ type: ADD_TO_CART, payload: product }) }} sx={{ width: '100%', borderRadius: '0px', background: '#ff1e00', padding: '5px 20px', '&:hover': { backgroundColor: '#011B39' } }} variant="contained" >Add to Cart</Button>
+                                <Button onClick={() => dispatch({ type: ADD_TO_CART, payload: product })} sx={{ width: '100%', borderRadius: '0px', background: '#ff1e00', padding: '5px 20px', '&:hover': { backgroundColor: '#011B39' } }} variant="contained" >Add to Cart</Button>
                                 :
                                 navigate('/signin')
-                        }
-                        {
-                            openCart && <OpenCart openCart={openCart} setOpenCart={setOpenCart}></OpenCart>
                         }
                     </div>
                 </div>

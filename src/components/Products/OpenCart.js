@@ -62,7 +62,7 @@ export default function OpenCart({ openCart, setOpenCart }) {
     )
 
   }
-  // console.log(cart)
+
   return (
     <div className="">
       <Menu

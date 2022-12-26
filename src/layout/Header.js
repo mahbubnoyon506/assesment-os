@@ -150,7 +150,7 @@ const Header = () => {
                 <NavLink onClick={() => setOpenMenu(!openMenu)} to='/' className='block md:inline-block mx-5 text-lg font-semibold pb-2 my-auto'>Home</NavLink>
                 {
                     menuItems.map((menu, index) =>
-                        <NavLink key={index} onClick={() => setOpenMenu(!openMenu)} to={`/product/${menu.category}`} className='block md:inline-block mx-5 text-lg font-semibold capitalize pb-2'>{menu.category}</NavLink>
+                        <NavLink key={index} onClick={() => setOpenMenu(!openMenu)} to={`/products/${menu.category}`} className='block md:inline-block mx-5 text-lg font-semibold capitalize pb-2'>{menu.category}</NavLink>
                     )
                 }
             </div>
